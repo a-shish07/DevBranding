@@ -111,7 +111,7 @@ const About = () => {
     <div className="bg-white">
       {/* Header */}
       <section className="relative bg-black text-white pt-40 pb-24 overflow-hidden min-h-[80vh] flex items-center">
-        <div className="absolute inset-0 grain opacity-20" />
+        <div className="absolute inset-0   opacity-20" />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 relative w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Side: Content */}

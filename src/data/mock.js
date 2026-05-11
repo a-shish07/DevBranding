@@ -12,7 +12,7 @@ export const SITE = {
 
 export const NAV_LINKS = [
   { label: 'The Story', path: '/story' },
-  { label: 'About', path: '/about' },
+  // { label: 'About', path: '/about' },
   { label: 'Events', path: '/events' },
   { label: 'Awards', path: '/achievements' },
   { label: 'Businesses', path: '/businesses' },
@@ -21,7 +21,7 @@ export const NAV_LINKS = [
 ];
 
 export const HERO_IMAGE =
-  '/Images/hero.jpg';
+  '/hero image.jpeg';
 
 export const PORTRAIT_ALT =
   'https://images.unsplash.com/photo-1659353220660-710d4c28c673?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwzfHxpbmRpYW4lMjBidXNpbmVzc21hbiUyMHN1aXR8ZW58MHx8fHwxNzc3OTkxMTk1fDA&ixlib=rb-4.1.0&q=85';

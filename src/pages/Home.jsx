@@ -122,7 +122,7 @@ const PillarsSection = () => {
           />
         ))}
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40" />
-        <div className="absolute inset-0 grain" />
+        <div className="absolute inset-0 " />
       </div>
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         <ScrollReveal className="lg:col-span-5" direction="right">
@@ -182,7 +182,7 @@ const TestimonialsSection = () => {
   const prev = () => setI((p) => (p - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
   return (
     <section className="relative py-20 md:py-28 bg-black text-white overflow-hidden">
-      <div className="absolute inset-0 grain" />
+      <div className="absolute inset-0" />
       <div
         className="absolute inset-0 opacity-60"
         style={{
@@ -317,98 +317,83 @@ const Home = () => {
   return (
     <div className="bg-white">
       {/* ===== HERO ===== */}
-      <section className="relative bg-black text-white min-h-screen flex items-center overflow-hidden pt-20">
+     <section className="relative text-white min-h-screen flex items-center overflow-hidden">
+        {/* Background: dark stage with blue futuristic glow + portrait */}
         <div className="absolute inset-0 hero-blue-glow" />
         <div className="absolute inset-0 hero-stage-glow" />
-        <div className="absolute inset-0 grain" />
+        <img
+          src="hero.jpeg"
+          alt="Dev Bharwad"
+          className="absolute inset-0 w-full h-full object-cover object-top opacity-55"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80" />
+        <div className="absolute inset-0 " />
 
-        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 w-full py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left Side: Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="lg:col-span-7"
+        <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 w-full pt-32 pb-24">
+          <div className="max-w-3xl fade-up">
+            <h1
+              className="font-display font-extrabold leading-[0.95] text-[12vw] md:text-[7.5vw] lg:text-[6.5rem]"
+              style={{ letterSpacing: '-0.04em' }}
             >
-              <h1
-                className="font-display font-extrabold leading-[0.95] text-[12vw] md:text-[8vw] lg:text-[7rem]"
-                style={{ letterSpacing: '-0.04em' }}
+              Life is
+              <br />
+              extraordinary.
+              <br />
+              <span style={{ color: '#C8102E' }}>Unleash yours.</span>
+            </h1>
+            <p className="mt-8 text-lg md:text-xl text-white/80 max-w-xl">
+              The official site of Dev Bharwad — entrepreneur, community leader, and cultural
+              torchbearer of the global Gujarati diaspora.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <Link
+                to="/story"
+                className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#C8102E] hover:bg-[#a50d24] font-display font-semibold text-sm uppercase tracking-widest transition-colors"
               >
-                Life is
-                <br />
-                extraordinary.
-                <br />
-                <span style={{ color: '#C8102E' }}>Unleash yours.</span>
-              </h1>
-              <p className="mt-8 text-lg md:text-xl text-white/80 max-w-xl leading-relaxed">
-                The official site of Dev Bharwad — entrepreneur, community leader, and cultural
-                torchbearer of the global Gujarati diaspora.
-              </p>
-              <div className="mt-10 flex flex-wrap items-center gap-6">
-                <Link
-                  to="/story"
-                  className="group inline-flex items-center gap-2 px-10 py-5 rounded-full bg-[#C8102E] hover:bg-[#a50d24] font-display font-bold text-sm uppercase tracking-[0.2em] transition-all hover:scale-105"
-                >
-                  Start Now <ArrowRight size={18} className="cta-arrow" />
-                </Link>
-                <Link
-                  to="/events"
-                  className="font-display text-sm uppercase tracking-widest text-white/90 hover:text-white border-b border-white/40 hover:border-white pb-1 transition-colors"
-                >
-                  Next Event ›
-                </Link>
-              </div>
-            </motion.div>
-
-            {/* Right Side: Image */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, x: 50 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:col-span-5 relative"
-            >
-              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl border border-white/10 group">
-                <img
-                  src="/hero image.jpeg"
-                  alt="Dev Bharwad"
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
-                
-                {/* Overlay Badge */}
-                <div className="absolute bottom-8 left-8 right-8 p-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                  <p className="text-[10px] font-condensed uppercase tracking-widest text-[#ff8194]">Founder & Leader</p>
-                  <p className="font-display font-bold text-lg mt-1">Dev Bharwad</p>
-                </div>
-              </div>
-              
-              {/* Decorative accent */}
-              <div className="absolute -top-6 -right-6 w-32 h-32 border-r-2 border-t-2 border-[#C8102E]/40 pointer-events-none" />
-            </motion.div>
+                Start Now <ArrowRight size={16} className="cta-arrow" />
+              </Link>
+              <Link
+                to="/events"
+                className="font-display text-sm uppercase tracking-widest text-white/90 hover:text-white border-b border-white/40 hover:border-white pb-1 transition-colors"
+              >
+                Next Event ›
+              </Link>
+            </div>
           </div>
         </div>
 
-        {/* Floating event card - Keeping it but repositioning if needed, or removing for cleaner grid */}
-        {/* <Link ... /> Removed for the new grid layout as it might clash visually */}
+        {/* Floating event card (bottom-right) */}
+        <Link
+          to="/events"
+          className="hidden lg:flex absolute bottom-10 right-10 w-[360px] bg-white text-black overflow-hidden group hover:shadow-2xl transition-shadow rounded-2xl"
+        >
+          <img
+            src={EVENTS[0].images}
+            alt={EVENTS[0].title}
+            className="w-32 h-32 object-cover"
+          />
+          <div className="flex-1 p-4">
+            <p className="text-[10px] font-condensed uppercase tracking-widest text-[#C8102E]">
+              Next Event
+            </p>
+            <p className="font-display font-bold text-sm leading-tight mt-1 line-clamp-2">
+              {EVENTS[0].title}
+            </p>
+            <span className="mt-3 inline-flex items-center gap-1 text-xs font-display uppercase tracking-widest text-black group-hover:text-[#C8102E] transition-colors">
+              View details <ArrowUpRight size={12} className="cta-arrow" />
+            </span>
+          </div>
+        </Link>
 
-        <div className="absolute bottom-10 left-0 right-0">
+        <div className="absolute bottom-6 left-0 right-0">
           <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.5 }}
-              transition={{ delay: 1.5 }}
-              className="flex items-center gap-4"
-            >
-              <div className="w-12 h-[1px] bg-white" />
-              <p className="text-white text-[11px] uppercase tracking-[0.3em] font-condensed">
-                Scroll to Explore
-              </p>
-            </motion.div>
+            <p className="text-white/60 text-[11px] uppercase tracking-[0.3em] font-condensed">
+              Scroll to Explore
+            </p>
           </div>
         </div>
       </section>
+
 
       {/* ===== EVENTS THAT LIBERATE (carousel) ===== */}
       <section className="py-24 md:py-28">
@@ -436,7 +421,7 @@ const Home = () => {
                   className="group relative shrink-0 w-[300px] md:w-[340px] h-[440px] snap-start-strong overflow-hidden bg-black text-white rounded-3xl"
                 >
                   <img
-                    src={e.image}
+                    src={e.images}
                     alt={e.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -458,24 +443,17 @@ const Home = () => {
       {/* ===== MASTER EVERY AREA (video background) ===== */}
       <section className="relative py-32 md:py-40 overflow-hidden text-white">
         {/* Video background */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster={STORY_IMAGES.cultural}
-        >
-          <source
-            src="https://videos.pexels.com/video-files/3015527/3015527-uhd_3840_2160_25fps.mp4"
-            type="video/mp4"
-          />
-          <source
-            src="https://videos.pexels.com/video-files/4763824/4763824-uhd_2560_1440_25fps.mp4"
-            type="video/mp4"
-          />
-        </video>
+       {/* YouTube Background Video */}
+<div className="absolute inset-0 overflow-hidden">
+  <iframe
+    className="absolute top-1/2 left-1/2 w-[120vw] h-[120vh] -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+    src="https://www.youtube.com/embed/41Sa0yrt8bw?autoplay=1&mute=1&controls=0&loop=1&playlist=41Sa0yrt8bw&modestbranding=1&showinfo=0&rel=0"
+    title="Background Video"
+    frameBorder="0"
+    allow="autoplay; fullscreen"
+    allowFullScreen
+  />
+</div>
         {/* Dark overlay + soft glow */}
         <div className="absolute inset-0 bg-black/65" />
         <div
@@ -485,7 +463,7 @@ const Home = () => {
               'radial-gradient(ellipse 50% 40% at 50% 50%, rgba(200,16,46,0.15), transparent 70%)',
           }}
         />
-        <div className="absolute inset-0 grain" />
+        <div className="absolute inset-0 " />
 
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <ScrollReveal direction="up">
@@ -594,7 +572,7 @@ const Home = () => {
               'radial-gradient(ellipse 50% 40% at 80% 30%, rgba(50,110,210,0.35), transparent 60%), radial-gradient(ellipse 60% 50% at 20% 80%, rgba(200,16,46,0.18), transparent 60%)',
           }}
         />
-        <div className="absolute inset-0 grain" />
+        <div className="absolute inset-0 " />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-14">
             <ScrollReveal className="lg:col-span-5" direction="right">
@@ -812,22 +790,31 @@ const Home = () => {
             </div>
           </ScrollReveal>
           <ScrollReveal className="lg:col-span-5" direction="left" delay={0.2}>
-            <button
-              onClick={() => alert('Video player coming soon')}
-              className="group relative w-full aspect-[4/3] overflow-hidden bg-black rounded-3xl"
-            >
-              <img
-                src={EVENTS[1].image}
-                alt="Mentorship"
-                className="absolute inset-0 w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/30" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="w-20 h-20 rounded-full bg-[#C8102E] flex items-center justify-center play-pulse">
-                  <Play size={26} className="text-white ml-1" />
-                </span>
-              </div>
-            </button>
+           <a
+  href="https://www.youtube.com/watch?v=41Sa0yrt8bw"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group relative block w-full aspect-video overflow-hidden rounded-3xl shadow-2xl"
+>
+  <iframe
+    className="w-full h-full"
+    src="https://www.youtube.com/embed/41Sa0yrt8bw?autoplay=1&mute=1&loop=1&playlist=41Sa0yrt8bw&controls=0&rel=0"
+    title="YouTube video player"
+    frameBorder="0"
+    allow="autoplay; encrypted-media"
+    allowFullScreen
+  />
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500" />
+
+  {/* Play Button */}
+  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <div className="w-20 h-20 rounded-full bg-[#C8102E] flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500">
+      <Play size={28} className="text-white fill-white ml-1" />
+    </div>
+  </div>
+</a>
           </ScrollReveal>
         </div>
       </section>
@@ -840,7 +827,7 @@ const Home = () => {
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/20" />
-        <div className="absolute inset-0 grain" />
+        <div className="absolute inset-0" />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 h-full flex items-center">
           <div className="max-w-2xl">
             <h2

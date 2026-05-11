@@ -18,12 +18,12 @@ const Achievements = () => {
 
         <div className="absolute inset-0 bg-black/75" />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40" />
-        <div className="absolute inset-0 grain" />
+        <div className="absolute inset-0  " />
 
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 w-full">
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-12 w-full lg:mt-32">
           <ScrollReveal direction="up">
             <div className="max-w-3xl">
-              <p className="font-display uppercase tracking-[0.35em] text-xs text-[#C8102E] mb-5">
+              <p className="font-display uppercase tracking-[0.35em] text-xs text-[#C8102E] mb-5 ">
                 Recognition & Excellence
               </p>
 
@@ -32,7 +32,7 @@ const Achievements = () => {
                 <span className="block text-[#C8102E]">Honors</span>
               </h1>
 
-              <p className="mt-6 text-base md:text-lg text-white/75 leading-relaxed max-w-xl">
+              <p className="mt-6 text-base md:text-lg text-white/75 leading-relaxed max-w-xl mb-5">
                 Celebrating milestones, leadership, and contributions that
                 continue to inspire meaningful impact across industries and
                 communities.

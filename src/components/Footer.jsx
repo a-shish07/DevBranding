@@ -22,7 +22,7 @@ const iconFor = (name) => {
 const Footer = () => {
   return (
     <footer className="bg-black text-white relative overflow-hidden">
-      <div className="absolute inset-0 grain pointer-events-none" />
+      <div className="absolute inset-0   pointer-events-none" />
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10 pt-20 pb-10 relative">
         <ScrollReveal direction="up" className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-5">

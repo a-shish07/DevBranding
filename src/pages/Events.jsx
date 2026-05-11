@@ -76,13 +76,13 @@ const Events = () => {
           className="absolute inset-0 w-full h-full object-cover opacity-30"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
-        <div className="absolute inset-0 grain" />
+        <div className="absolute inset-0  " />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 relative">
           <ScrollReveal direction="up">
             <p className="font-display uppercase tracking-[0.3em] text-xs text-[#C8102E]">Community & Culture</p>
-            <h1 className="font-display uppercase text-6xl md:text-8xl lg:text-[10rem] font-bold leading-[0.9] mt-4">
-              <span style={{ color: '#C8102E' }}>EVENTS</span>
-            </h1>
+           <h1 className="font-display uppercase text-6xl md:text-8xl lg:text-[10rem] font-bold leading-[0.9] mt-4 text-[#C8102E]">
+  EVENTS<span className="text-white">.</span>
+</h1>
             <p className="font-serif-italic text-xl md:text-2xl mt-6 max-w-2xl text-white/80">
               Bringing the Gujarati diaspora together — across cities, generations, and causes.
             </p>

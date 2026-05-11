@@ -132,7 +132,7 @@ const Businesses = () => {
         />
 
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
-        <div className="absolute inset-0 grain" />
+        <div className="absolute inset-0  " />
 
         <div className="max-w-7xl mx-auto px-6 lg:px-10 relative">
           <ScrollReveal direction="up">

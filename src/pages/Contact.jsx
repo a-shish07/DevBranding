@@ -48,7 +48,7 @@ const Contact = () => {
     <div className="bg-white">
       {/* Hero */}
       <section className="relative bg-black text-white pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 grain" />
+        <div className="absolute inset-0  " />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 relative">
           <ScrollReveal direction="up">
             <p className="font-display uppercase tracking-[0.3em] text-xs text-[#C8102E]">Reach Out</p>
