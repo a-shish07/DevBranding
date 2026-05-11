@@ -326,7 +326,7 @@ const Home = () => {
               className="w-full h-full object-cover object-center"
             />
             {/* Soft blend from the image into the black background of the left side */}
-            <div className="absolute inset-y-0 -left-1 w-full bg-gradient-to-r from-blue-950 via-blue/20 to-transparent" />
+            <div className="absolute inset-y-0 -left-1 w-full bg-gradient-to-r from-blue-950  to-transparent" />
           </div>
           
           {/* Mobile overlay to ensure text contrast */}
