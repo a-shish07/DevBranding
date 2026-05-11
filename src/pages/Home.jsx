@@ -330,10 +330,10 @@ const Home = () => {
           </div>
           
           {/* Mobile overlay to ensure text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent lg:hidden" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/10 to-transparent lg:hidden grain" />
           
           {/* Subtle top/bottom vignettes */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/10 pointer-events-none" />
         </div>
 
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 w-full pt-32 pb-24">
