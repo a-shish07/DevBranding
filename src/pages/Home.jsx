@@ -317,17 +317,24 @@ const Home = () => {
   return (
     <div className="bg-white">
       {/* ===== HERO ===== */}
-     <section className="relative text-white min-h-screen flex items-center overflow-hidden">
-        {/* Background: dark stage with blue futuristic glow + portrait */}
-        <div className="absolute inset-0 hero-blue-glow" />
-        <div className="absolute inset-0 hero-stage-glow" />
-        <img
-          src="hero.jpeg"
-          alt="Dev Bharwad"
-          className="absolute inset-0 w-full h-full object-cover object-top opacity-55"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80" />
-        <div className="absolute inset-0 " />
+     <section className="relative text-white min-h-screen flex items-center overflow-hidden bg-blue-950 grain">
+        <div className="absolute inset-0 flex justify-end">
+          <div className="relative w-full lg:w-[55%] h-full">
+            <img
+              src={HERO_IMAGE}
+              alt="Dev Bharwad"
+              className="w-full h-full object-cover object-center"
+            />
+            {/* Soft blend from the image into the black background of the left side */}
+            <div className="absolute inset-y-0 -left-1 w-full bg-gradient-to-r from-blue-950 via-blue/20 to-transparent" />
+          </div>
+          
+          {/* Mobile overlay to ensure text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent lg:hidden" />
+          
+          {/* Subtle top/bottom vignettes */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 pointer-events-none" />
+        </div>
 
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 w-full pt-32 pb-24">
           <div className="max-w-3xl fade-up">
@@ -365,14 +372,14 @@ const Home = () => {
         {/* Floating event card (bottom-right) */}
         <Link
           to="/events"
-          className="hidden lg:flex absolute bottom-10 right-10 w-[360px] bg-white text-black overflow-hidden group hover:shadow-2xl transition-shadow rounded-2xl"
+          className="hidden lg:flex absolute bottom-10 right-1 w-[300px] bg-white text-black overflow-hidden group hover:shadow-2xl transition-shadow rounded-2xl"
         >
           <img
             src={EVENTS[0].images}
             alt={EVENTS[0].title}
-            className="w-32 h-32 object-cover"
+            className="w-32 h-28 object-cover"
           />
-          <div className="flex-1 p-4">
+          <div className="flex-1 p-2">
             <p className="text-[10px] font-condensed uppercase tracking-widest text-[#C8102E]">
               Next Event
             </p>
