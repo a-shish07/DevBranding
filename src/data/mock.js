@@ -24,23 +24,23 @@ export const HERO_IMAGE =
   '/hero image.jpeg';
 
 export const PORTRAIT_ALT =
-  'https://images.unsplash.com/photo-1659353220660-710d4c28c673?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwzfHxpbmRpYW4lMjBidXNpbmVzc21hbiUyMHN1aXR8ZW58MHx8fHwxNzc3OTkxMTk1fDA&ixlib=rb-4.1.0&q=85';
+  '/second.jpeg';
 
 export const PORTRAIT_3 =
-  'https://images.unsplash.com/photo-1771244688590-1e481dba1b5a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBidXNpbmVzc21hbiUyMHN1aXR8ZW58MHx8fHwxNzc3OTkxMTk1fDA&ixlib=rb-4.1.0&q=85';
+  '/first.jpeg';
 
 export const PORTRAIT_4 =
-  'https://images.unsplash.com/photo-1650110002977-3ee8cc5eac91?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwyfHxpbmRpYW4lMjBidXNpbmVzc21hbiUyMHN1aXh4xN3x8fHwxNzc3OTkxMTk1fDA&ixlib=rb-4.1.0&q=85'.replace('h4xN3x', 'fDA');
+  '/fourth.jpeg'.replace('h4xN3x', 'fDA');
 
 export const STORY_IMAGES = {
   community:
     'https://images.unsplash.com/photo-1660015155339-c224fae66104?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwxfHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85',
   cultural:
-    'https://images.unsplash.com/photo-1763733593826-d51c270cc8b4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHw0fHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85',
+    '/third.jpeg',
   india:
     'https://images.pexels.com/photos/6327491/pexels-photo-6327491.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
   stage:
-    'https://images.unsplash.com/photo-1762158007969-eb58e74ee3d3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwxfHxzcGVha2luZyUyMHN0YWdlJTIwbGVhZGVyc2hpcHxlbnwwfHx8fDE3Nzc5OTEyMDh8MA&ixlib=rb-4.1.0&q=85',
+    '/fourth.jpeg',
 };
 
 export const BUSINESS_IMAGES = [
@@ -118,9 +118,9 @@ export const EVENTS = [
     text:
       'Leading GSKC with inclusivity, foresight, and a deep sense of community responsibility — celebrating festivals, supporting families, and uniting generations.',
     images: [
-      'https://images.unsplash.com/photo-1660015155339-c224fae66104?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwxfHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85',
-      'https://images.unsplash.com/photo-1763733593826-d51c270cc8b4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHw0fHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85',
-      'https://images.unsplash.com/photo-1762158007969-eb58e74ee3d3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwxfHxzcGVha2luZyUyMHN0YWdlJTIwbGVhZGVyc2hpcHxlbnwwfHx8fDE3Nzc5OTEyMDh8MA&ixlib=rb-4.1.0&q=85'
+      '/third.jpeg',
+      '/first.jpeg',
+      '/second.jpeg',
     ],
     badge: 'Year-round • USA',
     date: 'Year-round',
@@ -134,9 +134,9 @@ export const EVENTS = [
     text:
       'Promoting Gujarati heritage on an international stage — championing language, music, dance, and tradition through landmark cultural programs.',
     images: [
-      'https://images.unsplash.com/photo-1763733593826-d51c270cc8b4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHw0fHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85',
-      'https://images.unsplash.com/photo-1660015155339-c224fae66104?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwxfHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85',
-      'https://images.unsplash.com/photo-1762158007969-eb58e74ee3d3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwxfHxzcGVha2luZyUyMHN0YWdlJTIwbGVhZGVyc2hpcHxlbnwwfHx8fDE3Nzc5OTEyMDh8MA&ixlib=rb-4.1.0&q=85'
+      '/second.jpeg',
+      '/third.jpeg',
+      '/first.jpeg',
     ],
     badge: 'Annual • North America',
     date: 'Annual',
@@ -150,9 +150,9 @@ export const EVENTS = [
     text:
       'Founder & Chairman of MSUC — a powerful platform that connects, empowers, and uplifts the Maldhari community across North America.',
     images: [
-      'https://images.unsplash.com/photo-1762158007969-eb58e74ee3d3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwxfHxzcGVha2luZyUyMHN0YWdlJTIwbGVhZGVyc2hpcHxlbnwwfHx8fDE3Nzc5OTEyMDh8MA&ixlib=rb-4.1.0&q=85',
-      'https://images.unsplash.com/photo-1660015155339-c224fae66104?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwxfHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85',
-      'https://images.unsplash.com/photo-1763733593826-d51c270cc8b4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHw0fHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85'
+      '/fourth.jpeg',
+      '/third.jpeg',
+      '/second.jpeg',
     ],
     badge: 'Founded • USA & Canada',
     date: 'Founded — Ongoing',
@@ -166,9 +166,9 @@ export const EVENTS = [
     text:
       'Spearheading fundraising initiatives for education, disaster relief, and community welfare — channeling resources where they create lasting change.',
     images: [
-      'https://images.unsplash.com/photo-1659355894406-977b8c4503d5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHw0fHxpbmRpYW4lMjBidXNpbmVzc21hbiUyMHN1aXR8ZW58MHx8fHwxNzc3OTkxMTk1fDA&ixlib=rb-4.1.0&q=85',
-      'https://images.unsplash.com/photo-1660015155339-c224fae66104?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwxfHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85',
-      'https://images.unsplash.com/photo-1763733593826-d51c270cc8b4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHw0fHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85'
+      '/first.jpeg',
+      '/third.jpeg',
+      '/second.jpeg',
     ],
     badge: 'Ongoing • Global',
     date: 'Ongoing',
@@ -229,9 +229,9 @@ export const TESTIMONIALS = [
     name: 'Anita Shah',
     role: 'Director — Cultural Foundation of America',
     portrait:
-      'https://images.unsplash.com/photo-1763733593826-d51c270cc8b4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHw0fHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85',
+      'https://in.pinterest.com/pin/323555554494893924/',
     avatar:
-      'https://images.unsplash.com/photo-1763733593826-d51c270cc8b4?crop=faces&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHw0fHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85&w=200&h=200',
+      'https://in.pinterest.com/pin/707628160247163425/',
     quote:
       'When Dev speaks, the room listens. When he commits, the work gets done. He is the engine behind so many quiet wins for our community.',
   },
@@ -264,25 +264,25 @@ export const VIDEO_TESTIMONIALS = [
     title: 'A conversation on community',
     quote: 'Dev’s leadership reminds us what is possible when we serve first.',
     image:
-      'https://images.unsplash.com/photo-1660015155339-c224fae66104?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwxfHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85',
+      '/second.jpeg',
   },
   {
     title: 'FOGA Cultural Day Highlights',
     quote: 'Heritage is alive when generations speak the same language.',
     image:
-      'https://images.unsplash.com/photo-1763733593826-d51c270cc8b4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHw0fHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85',
+      '/fourth.jpeg',
   },
   {
     title: 'Inside AOD Group',
     quote: 'A diversified ecosystem built for the long term.',
     image:
-      'https://images.unsplash.com/photo-1739140019682-05bd100b5a5e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3RlbCUyMHJlYWwlMjBlc3RhdGV8ZW58MHx8fHwxNzc3OTkxMTk1fDA&ixlib=rb-4.1.0&q=85',
+      '/third.jpeg',
   },
   {
     title: 'Leadership in Service',
     quote: 'Lead with humility. Build with vision. Serve without expectation.',
     image:
-      'https://images.unsplash.com/photo-1762158007969-eb58e74ee3d3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwxfHxzcGVha2luZyUyMHN0YWdlJTIwbGVhZGVyc2hpcHxlbnwwfHx8fDE3Nzc5OTEyMDh8MA&ixlib=rb-4.1.0&q=85',
+      '/first.jpeg',
   },
 ];
 
@@ -341,7 +341,7 @@ export const NEWS = [
     excerpt:
       'A celebration of Gujarati heritage drew thousands of community members across North America for the annual cultural summit.',
     image:
-      'https://images.unsplash.com/photo-1763733593826-d51c270cc8b4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHw0fHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85',
+      '/second.jpeg',
   },
   {
     type: 'News',
@@ -362,7 +362,7 @@ export const BLOGS = [
     excerpt:
       'On building a life where success is measured by how many people you lift along the way.',
     image:
-      'https://images.unsplash.com/photo-1660015155339-c224fae66104?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwxfHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85',
+      '/third.jpeg',
   },
   {
     type: 'Blog',
@@ -371,7 +371,7 @@ export const BLOGS = [
     excerpt:
       'Six lessons learned crossing oceans, building businesses, and staying rooted in who you are.',
     image:
-      'https://images.pexels.com/photos/6327491/pexels-photo-6327491.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      '/first.jpeg',
   },
 ];
 
@@ -381,14 +381,14 @@ export const YOUTUBE = [
     title: 'Dev Bharwad — A Conversation on Leadership',
     duration: '12:42',
     image:
-      'https://images.unsplash.com/photo-1762158007969-eb58e74ee3d3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwxfHxzcGVha2luZyUyMHN0YWdlJTIwbGVhZGVyc2hpcHxlbnwwfHx8fDE3Nzc5OTEyMDh8MA&ixlib=rb-4.1.0&q=85',
+      '/second.jpeg',
   },
   {
     type: 'Video',
     title: 'Inside FOGA Cultural Day 2024',
     duration: '08:15',
     image:
-      'https://images.unsplash.com/photo-1763733593826-d51c270cc8b4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHw0fHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85',
+      '/third.jpeg',
   },
 ];
 

@@ -375,7 +375,7 @@ const Home = () => {
           className="hidden lg:flex absolute bottom-10 right-1 w-[300px] bg-white text-black overflow-hidden group hover:shadow-2xl transition-shadow rounded-2xl"
         >
           <img
-            src={EVENTS[0].images}
+            src="/third.jpeg"
             alt={EVENTS[0].title}
             className="w-32 h-28 object-cover"
           />
@@ -428,7 +428,7 @@ const Home = () => {
                   className="group relative shrink-0 w-[300px] md:w-[340px] h-[440px] snap-start-strong overflow-hidden bg-black text-white rounded-3xl"
                 >
                   <img
-                    src={e.images}
+                    src={e.images[0]}
                     alt={e.title}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -689,7 +689,7 @@ const Home = () => {
                 className="group relative shrink-0 w-[88vw] md:w-[720px] h-[480px] snap-start-strong overflow-hidden bg-black text-white rounded-3xl"
               >
                 <img
-                  src={e.image}
+                  src={e.images[0]}
                   alt={e.title}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
