@@ -7,6 +7,7 @@ import {
 
 import { BUSINESSES, BUSINESS_IMAGES } from '../data/mock';
 import ScrollReveal from '../components/ui/scroll-reveal';
+import TitleReveal from '../components/ui/title-reveal';
 
 const BusinessModal = ({ business, onClose }) => {
   if (!business) return null;
@@ -141,7 +142,9 @@ const Businesses = () => {
             </p>
 
             <h1 className="font-display uppercase text-5xl md:text-7xl lg:text-[8rem] font-black leading-[0.9] mt-4 tracking-tight">
-              <span className="text-[#C8102E]">Businesses</span>
+              <TitleReveal>
+                <span className="text-[#C8102E]">Businesses</span>
+              </TitleReveal>
             </h1>
 
             <p className="font-serif-italic text-lg md:text-2xl mt-6 max-w-2xl text-white/75">
@@ -163,13 +166,15 @@ const Businesses = () => {
             </p>
 
             <h2 className="font-display uppercase text-4xl md:text-6xl font-black leading-[0.92] text-black tracking-tight">
-              A diversified
-              <br />
-              ecosystem under
-              <br />
-              <span className="text-[#C8102E]">
-                one vision.
-              </span>
+              <TitleReveal>
+                A diversified
+                <br />
+                ecosystem under
+                <br />
+                <span className="text-[#C8102E]">
+                  one vision.
+                </span>
+              </TitleReveal>
             </h2>
 
             <div className="h-px w-20 bg-[#C8102E] mt-8 mb-6" />
@@ -217,10 +222,12 @@ const Businesses = () => {
               </p>
 
               <h2 className="font-display uppercase text-3xl md:text-5xl font-black leading-[0.95] text-black tracking-tight">
-                Explore the
-                <span className="block text-[#C8102E]">
-                  Businesses
-                </span>
+                <TitleReveal>
+                  Explore the
+                  <span className="block text-[#C8102E]">
+                    Businesses
+                  </span>
+                </TitleReveal>
               </h2>
             </div>
 

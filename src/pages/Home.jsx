@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from '../components/ui/scroll-reveal';
+import TitleReveal from '../components/ui/title-reveal';
 import { Skeleton } from '../components/ui/skeleton';
 import { ChevronDown } from "lucide-react";
 import {
@@ -28,73 +29,6 @@ import {
 } from '../data/mock';
 
 
-
-/* ============================================================ */
-/* TitleReveal: Masked slide-up animation for titles            */
-/* ============================================================ */
-const TitleReveal = ({ children, className = "", delay = 0 }) => {
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { 
-        staggerChildren: 0.08, 
-        delayChildren: delay 
-      },
-    },
-  };
-
-  const item = {
-    hidden: { y: "120%", opacity: 0, rotate: 2 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      rotate: 0,
-      transition: {
-        duration: 1.2,
-        ease: [0.16, 1, 0.3, 1], // Custom smooth quint easing
-      },
-    },
-  };
-
-  // Helper to split text into words and wrap them
-  const renderContent = (content) => {
-    return React.Children.map(content, (child) => {
-      if (typeof child === "string") {
-        return child.split(" ").map((word, i) => (
-          <span key={i} className="inline-block overflow-hidden mr-[0.25em] py-[0.1em]">
-            <motion.span variants={item} className="inline-block whitespace-nowrap">
-              {word}
-            </motion.span>
-          </span>
-        ));
-      }
-      if (React.isValidElement(child)) {
-        if (child.type === "br") return child;
-        return (
-          <span className="inline-block">
-            {React.cloneElement(child, {
-              children: renderContent(child.props.children),
-            })}
-          </span>
-        );
-      }
-      return child;
-    });
-  };
-
-  return (
-    <motion.div
-      variants={container}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-100px" }}
-      className={className}
-    >
-      {renderContent(children)}
-    </motion.div>
-  );
-};
 
 /* ============================================================ */
 /* Carousel: simple scroll-snap horizontal slider (Tony style)   */
@@ -946,7 +880,9 @@ const Home = () => {
             className="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.95] text-black"
             style={{ letterSpacing: '-0.03em' }}
           >
-            Become <span style={{ color: '#C8102E' }}>unshakeable</span>.
+            <TitleReveal>
+              Become <span style={{ color: '#C8102E' }}>unshakeable</span>.
+            </TitleReveal>
           </h2>
           <p className="mt-8 text-lg text-neutral-700">
             With community programs, mentorship, and businesses designed to power your growth, Dev’s
@@ -1026,9 +962,11 @@ const Home = () => {
               className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.02] text-black mt-3"
               style={{ letterSpacing: '-0.03em' }}
             >
-              Expert guidance for
-              <br />
-              your <span style={{ color: '#C8102E' }}>path</span>.
+              <TitleReveal>
+                Expert guidance for
+                <br />
+                your <span style={{ color: '#C8102E' }}>path</span>.
+              </TitleReveal>
             </h2>
           
 
@@ -1130,9 +1068,11 @@ const Home = () => {
               className="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.95]"
               style={{ letterSpacing: '-0.03em' }}
             >
-              Ready to live an
-              <br />
-              <span style={{ color: '#C8102E' }}>extraordinary life?</span>
+              <TitleReveal>
+                Ready to live an
+                <br />
+                <span style={{ color: '#C8102E' }}>extraordinary life?</span>
+              </TitleReveal>
             </h2>
             <p className="mt-6 text-xl text-white/85">
               Now is your time. Connect with us to learn more.

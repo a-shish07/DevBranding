@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Calendar, MapPin } from 'lucide-react';
 import { EVENTS, STORY_IMAGES } from '../data/mock';
+import TitleReveal from '../components/ui/title-reveal';
 import {
   Carousel,
   CarouselContent,
@@ -81,8 +82,10 @@ const Events = () => {
           <ScrollReveal direction="up">
             <p className="font-display uppercase tracking-[0.3em] text-xs text-[#C8102E]">Community & Culture</p>
            <h1 className="font-display uppercase text-6xl md:text-8xl lg:text-[10rem] font-bold leading-[0.9] mt-4 text-[#C8102E]">
-  EVENTS<span className="text-white">.</span>
-</h1>
+             <TitleReveal>
+               EVENTS<span className="text-white">.</span>
+             </TitleReveal>
+           </h1>
             <p className="font-serif-italic text-xl md:text-2xl mt-6 max-w-2xl text-white/80">
               Bringing the Gujarati diaspora together — across cities, generations, and causes.
             </p>
@@ -114,7 +117,7 @@ const Events = () => {
                   className="font-display uppercase text-4xl md:text-5xl font-bold leading-[0.95] mt-3 text-black"
                   style={{ letterSpacing: '-0.01em' }}
                 >
-                  {e.title}
+                  <TitleReveal>{e.title}</TitleReveal>
                 </h2>
                 <div className="divider-red mt-6" />
                 <p className="mt-6 text-lg text-neutral-700 leading-relaxed">{e.text}</p>

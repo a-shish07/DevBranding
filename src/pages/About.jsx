@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
+import TitleReveal from '../components/ui/title-reveal';
 import { Skeleton } from '../components/ui/skeleton';
 import { 
   PORTRAIT_ALT, 
@@ -83,7 +84,7 @@ const Section = ({ section, index, setActiveSection }) => {
         className="font-display uppercase text-4xl md:text-5xl font-extrabold leading-tight text-black mb-8"
         style={{ letterSpacing: '-0.02em' }}
       >
-        {section.title}
+        <TitleReveal>{section.title}</TitleReveal>
       </h2>
       <div className="space-y-6">
         {section.content.map((text, idx) => (
@@ -171,8 +172,10 @@ const About = () => {
                 className="font-display uppercase text-6xl md:text-8xl lg:text-[8rem] font-extrabold leading-[0.9] mt-4"
                 style={{ letterSpacing: '-0.04em' }}
               >
-                ABOUT <br />
-                <span className="text-[#C8102E]">DEV BHARWAD</span>
+                <TitleReveal>
+                  ABOUT <br />
+                  <span className="text-[#C8102E]">DEV BHARWAD</span>
+                </TitleReveal>
               </h1>
               <p className="font-serif-italic text-xl md:text-2xl mt-8 max-w-2xl text-white/80 leading-relaxed">
                 Entrepreneur. Community Leader. Cultural Torchbearer. <br className="hidden md:block" />

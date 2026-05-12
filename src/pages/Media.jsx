@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Play, ArrowUpRight, Newspaper, FileText, Youtube, Image as ImageIcon, X } from 'lucide-react';
 import { NEWS, GALLERY, YOUTUBE } from '../data/mock';
 import ScrollReveal from '../components/ui/scroll-reveal';
+import TitleReveal from '../components/ui/title-reveal';
 
 const tabs = [
   { id: 'youtube', label: 'YouTube', icon: Youtube, data: YOUTUBE },
@@ -23,7 +24,9 @@ const Media = () => {
           <ScrollReveal direction="up">
             <p className="font-display uppercase tracking-[0.3em] text-xs text-[#C8102E]">Press • Stories • Voice</p>
             <h1 className="font-display uppercase text-6xl md:text-8xl lg:text-[10rem] font-bold leading-[0.9] mt-4">
-              MEDIA & <span style={{ color: '#C8102E' }}>GALLERY</span>
+              <TitleReveal>
+                MEDIA & <span style={{ color: '#C8102E' }}>GALLERY</span>
+              </TitleReveal>
             </h1>
             <p className="font-serif-italic text-xl md:text-2xl mt-6 max-w-2xl text-white/80">
               Conversations, coverage, and reflections from a life of leadership.

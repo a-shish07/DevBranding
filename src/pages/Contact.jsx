@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Send, Instagram, Facebook, Linkedin } from 'lucide
 import { toast } from 'sonner';
 import { SITE, SOCIALS } from '../data/mock';
 import ScrollReveal from '../components/ui/scroll-reveal';
+import TitleReveal from '../components/ui/title-reveal';
   //  import ScrollReveal from '../components/ui/scroll-reveal'; // adjust path if needed
 // import { Mail, MapPin } from 'lucide-react';
 
@@ -53,7 +54,9 @@ const Contact = () => {
           <ScrollReveal direction="up">
             <p className="font-display uppercase tracking-[0.3em] text-xs text-[#C8102E]">Reach Out</p>
             <h1 className="font-display uppercase text-6xl md:text-8xl lg:text-[10rem] font-bold leading-[0.9] mt-4">
-              <span style={{ color: '#C8102E' }}>CONTACT</span>
+              <TitleReveal>
+                <span style={{ color: '#C8102E' }}>CONTACT</span>
+              </TitleReveal>
             </h1>
             <p className="font-serif-italic text-xl md:text-2xl mt-6 max-w-2xl text-white/80">
               For collaborations, speaking, community work or media — start a conversation.
@@ -67,7 +70,7 @@ const Contact = () => {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12">
           <ScrollReveal className="lg:col-span-5" direction="right">
             <h2 className="font-display uppercase text-4xl md:text-5xl font-bold leading-[0.95] text-black">
-              Let&apos;s talk.
+              <TitleReveal>Let&apos;s talk.</TitleReveal>
             </h2>
             <div className="divider-red mt-6" />
             <p className="mt-6 text-neutral-700 leading-relaxed max-w-md">

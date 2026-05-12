@@ -2,6 +2,7 @@ import React from 'react';
 import { Award, Trophy, Star } from 'lucide-react';
 import { ACHIEVEMENTS, AWARD_IMAGES } from '../data/mock';
 import ScrollReveal from '../components/ui/scroll-reveal';
+import TitleReveal from '../components/ui/title-reveal';
 
 const icons = [Trophy, Award, Star, Award];
 
@@ -28,8 +29,10 @@ const Achievements = () => {
               </p>
 
               <h1 className="font-display uppercase font-black leading-[0.9] tracking-tight text-4xl sm:text-6xl md:text-7xl lg:text-[6rem]">
-                Awards &
-                <span className="block text-[#C8102E]">Honors</span>
+                <TitleReveal>
+                  Awards &
+                  <span className="block text-[#C8102E]">Honors</span>
+                </TitleReveal>
               </h1>
 
               <p className="mt-6 text-base md:text-lg text-white/75 leading-relaxed max-w-xl mb-5">
@@ -53,10 +56,12 @@ const Achievements = () => {
                 </p>
 
                 <h2 className="font-display uppercase text-3xl md:text-5xl font-black leading-[0.95] tracking-tight text-black">
-                  Legacy of
-                  <span className="block text-[#C8102E]">
-                    Recognition
-                  </span>
+                  <TitleReveal>
+                    Legacy of
+                    <span className="block text-[#C8102E]">
+                      Recognition
+                    </span>
+                  </TitleReveal>
                 </h2>
               </div>
 
@@ -120,7 +125,7 @@ const Achievements = () => {
                         </p>
 
                         <h3 className="font-display uppercase text-2xl md:text-4xl font-black leading-tight tracking-tight text-black mb-5">
-                          {a.title}
+                          <TitleReveal>{a.title}</TitleReveal>
                         </h3>
 
                         <p className="text-neutral-600 text-base leading-relaxed mb-6">

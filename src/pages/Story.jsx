@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { STORY_CHAPTERS, PORTRAIT_4 } from '../data/mock';
 import ScrollReveal from '../components/ui/scroll-reveal';
+import TitleReveal from '../components/ui/title-reveal';
 
 const Story = () => {
   return (
@@ -14,7 +15,9 @@ const Story = () => {
           <ScrollReveal direction="up">
             <p className="font-display uppercase tracking-[0.3em] text-xs text-[#C8102E]">Chapter Index</p>
             <h1 className="font-display uppercase text-6xl md:text-8xl lg:text-[10rem] font-bold leading-[0.9] mt-4">
-              THE <span style={{ color: '#C8102E' }}>STORY</span>
+              <TitleReveal>
+                THE <span style={{ color: '#C8102E' }}>STORY</span>
+              </TitleReveal>
             </h1>
             <p className="font-serif-italic text-xl md:text-2xl mt-6 max-w-2xl text-white/80">
               A journey that bridges grassroots values with global vision — told in six chapters.
@@ -58,7 +61,7 @@ const Story = () => {
                     className="font-display uppercase text-4xl md:text-5xl font-bold leading-[0.95] mt-2 text-black"
                     style={{ letterSpacing: '-0.01em' }}
                   >
-                    {c.title}
+                    <TitleReveal>{c.title}</TitleReveal>
                   </h2>
                   <div className="divider-red mt-6" />
                   <p className="mt-6 text-lg text-neutral-700 leading-relaxed max-w-xl">{c.text}</p>
@@ -79,9 +82,11 @@ const Story = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40" />
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 py-24 md:py-32">
           <h2 className="font-display uppercase text-5xl md:text-7xl font-bold leading-[0.95] max-w-3xl">
-            The story continues.
-            <br />
-            <span style={{ color: '#C8102E' }}>Be part of it.</span>
+            <TitleReveal>
+              The story continues.
+              <br />
+              <span style={{ color: '#C8102E' }}>Be part of it.</span>
+            </TitleReveal>
           </h2>
           <Link
             to="/contact"
