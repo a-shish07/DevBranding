@@ -65,7 +65,7 @@ export const STORY_CHAPTERS = [
     text:
       'A distinguished entrepreneur, community leader, and cultural torchbearer whose journey seamlessly bridges grassroots values with global vision — rooted in humility, driven by purpose.',
     image:
-      'https://images.unsplash.com/photo-1659355894406-977b8c4503d5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHw0fHxpbmRpYW4lMjBidXNpbmVzc21hbiUyMHN1aXR8ZW58MHx8fHwxNzc3OTkxMTk1fDA&ixlib=rb-4.1.0&q=85',
+      '/second.jpeg',
   },
   {
     no: '02',
@@ -97,7 +97,7 @@ export const STORY_CHAPTERS = [
     text:
       'Family. Heritage. Community. The belief that real wealth is measured not by what you build for yourself, but by what you leave behind for the generations that follow.',
     image:
-      'https://images.unsplash.com/photo-1660015155339-c224fae66104?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwxfHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85',
+      '/third.jpeg',
   },
   {
     no: '06',
@@ -105,7 +105,7 @@ export const STORY_CHAPTERS = [
     text:
       'Lead with humility. Build with vision. Serve without expectation. Leadership is a quiet promise you keep — every single day.',
     image:
-      'https://images.unsplash.com/photo-1762158007969-eb58e74ee3d3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwxfHxzcGVha2luZyUyMHN0YWdlJTIwbGVhZGVyc2hpcHxlbnwwfHx8fDE3Nzc5OTEyMDh8MA&ixlib=rb-4.1.0&q=85',
+      '/fourth.jpeg',
   },
 ];
 

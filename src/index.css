@@ -153,6 +153,25 @@ html { scroll-behavior: smooth; }
 .snap-start-strong { scroll-snap-align: start; }
 
 
+/* Custom Scrollbar for About Description */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #C8102E;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a50d24;
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #C8102E #f1f1f1;
+}
+
 .grain{
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }

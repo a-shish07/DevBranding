@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { Skeleton } from '../components/ui/skeleton';
 import { 
   PORTRAIT_ALT, 
   PORTRAIT_3, 
@@ -96,9 +97,18 @@ const Section = ({ section, index, setActiveSection }) => {
 };
 
 const About = () => {
+  const [loading, setLoading] = useState(true);
   const [activeSection, setActiveSection] = useState(0);
   const [direction, setDirection] = useState('down');
   const prevIndex = useRef(0);
+
+  useEffect(() => {
+    // Simulate loading
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSetActiveSection = (index) => {
     if (index !== activeSection) {
@@ -106,6 +116,41 @@ const About = () => {
       setActiveSection(index);
     }
   };
+
+  if (loading) {
+    return (
+      <div className="bg-white">
+        <section className="relative bg-neutral-900 pt-40 pb-24 min-h-[80vh] flex items-center">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div className="lg:col-span-7 space-y-6">
+              <Skeleton className="h-4 w-24 bg-white/10" />
+              <Skeleton className="h-32 w-full bg-white/10" />
+              <Skeleton className="h-20 w-3/4 bg-white/10" />
+            </div>
+            <div className="lg:col-span-5">
+              <Skeleton className="aspect-[4/5] w-full rounded-2xl bg-white/10" />
+            </div>
+          </div>
+        </section>
+        <section className="py-24 max-w-[1400px] mx-auto px-6 lg:px-10">
+          <div className="flex flex-col lg:flex-row gap-16">
+            <div className="hidden lg:block lg:w-1/2">
+              <Skeleton className="h-[60vh] w-full rounded-sm" />
+            </div>
+            <div className="w-full lg:w-1/2 space-y-12">
+              {[1, 2, 3].map(i => (
+                <div key={i} className="space-y-4">
+                  <Skeleton className="h-4 w-20" />
+                  <Skeleton className="h-12 w-3/4" />
+                  <Skeleton className="h-32 w-full" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-white">

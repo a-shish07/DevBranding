@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from '../components/ui/scroll-reveal';
+import { Skeleton } from '../components/ui/skeleton';
 import { ChevronDown } from "lucide-react";
 import {
   ArrowRight,
@@ -27,6 +28,73 @@ import {
 } from '../data/mock';
 
 
+
+/* ============================================================ */
+/* TitleReveal: Masked slide-up animation for titles            */
+/* ============================================================ */
+const TitleReveal = ({ children, className = "", delay = 0 }) => {
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.08, 
+        delayChildren: delay 
+      },
+    },
+  };
+
+  const item = {
+    hidden: { y: "120%", opacity: 0, rotate: 2 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      rotate: 0,
+      transition: {
+        duration: 1.2,
+        ease: [0.16, 1, 0.3, 1], // Custom smooth quint easing
+      },
+    },
+  };
+
+  // Helper to split text into words and wrap them
+  const renderContent = (content) => {
+    return React.Children.map(content, (child) => {
+      if (typeof child === "string") {
+        return child.split(" ").map((word, i) => (
+          <span key={i} className="inline-block overflow-hidden mr-[0.25em] py-[0.1em]">
+            <motion.span variants={item} className="inline-block whitespace-nowrap">
+              {word}
+            </motion.span>
+          </span>
+        ));
+      }
+      if (React.isValidElement(child)) {
+        if (child.type === "br") return child;
+        return (
+          <span className="inline-block">
+            {React.cloneElement(child, {
+              children: renderContent(child.props.children),
+            })}
+          </span>
+        );
+      }
+      return child;
+    });
+  };
+
+  return (
+    <motion.div
+      variants={container}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
+      className={className}
+    >
+      {renderContent(children)}
+    </motion.div>
+  );
+};
 
 /* ============================================================ */
 /* Carousel: simple scroll-snap horizontal slider (Tony style)   */
@@ -133,9 +201,11 @@ const PillarsSection = () => {
             className="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.95]"
             style={{ letterSpacing: '-0.03em' }}
           >
-            Pillars for an
-            <br />
-            extraordinary life.
+            <TitleReveal>
+              Pillars for an
+              <br />
+              extraordinary life.
+            </TitleReveal>
           </h2>
           <p className="mt-6 text-white/70 max-w-md">
             The values that shape every decision, every relationship, and every business Dev builds.
@@ -324,22 +394,196 @@ const TestimonialsSection = () => {
 };
 
 /* ============================================================ */
+/* About Us Section (Requested Style)                            */
+/* ============================================================ */
+const AboutSection = () => {
+  const images = ['/first.jpeg', '/second.jpeg', '/third.jpeg'];
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  return (
+    <section className=" pt-10 bg-white overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Left: Auto-playing Carousel */}
+          <div className="relative aspect-[4/5] md:aspect-square lg:aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-2xl bg-neutral-100">
+            <AnimatePresence initial={false}>
+              <motion.img
+                key={index}
+                src={images[index]}
+                alt={`Dev Bharwad ${index + 1}`}
+                initial={{ opacity: 0, scale: 1.25 }}
+                animate={{ opacity: 1, scale: 1.1 }}
+                exit={{ opacity: 0, scale: 1.15 }}
+                transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </AnimatePresence>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+          </div>
+
+          {/* Right: Content */}
+          <div className="flex flex-col h-full">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <p className="font-condensed uppercase tracking-[0.3em] text-sm font-bold text-[#C8102E] mb-3">
+                ABOUT US
+              </p>
+              <h2 className="font-display text-5xl md:text-6xl font-extrabold leading-[1.05] text-black mb-8" style={{ letterSpacing: '-0.02em' }}>
+                <TitleReveal>
+                  Building communities.<br />
+                  <span className="text-[#C8102E]">Leading with vision.</span>
+                </TitleReveal>
+              </h2>
+            </motion.div>
+              
+            {/* Scrollable Description Container */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="overflow-y-auto pr-4 custom-scrollbar mb-10 max-h-[300px] md:max-h-[350px] overscroll-contain"
+            >
+              <div className="space-y-6 text-neutral-600 text-base leading-relaxed">
+                <p>
+                  Dev Bharwad is a respected entrepreneur and an influential leader within the global Gujarati community. 
+                  Born and brought up in Ahmedabad, India, he completed his Bachelor of Commerce (B.Com) and began his professional 
+                  journey in the Real Estate sector before relocating to the United States in 2003.
+                </p>
+                <p>
+                  Based in the USA, Dev has successfully established himself in the Property Business and currently serves as 
+                  the Executive Director of AOD Group of Companies, contributing strategic direction and business leadership 
+                  across diverse ventures.
+                </p>
+                <p>
+                  A passionate advocate of community building and cultural preservation, Dev Bharwad has been the President 
+                  of the Gujarati Samaj of Kansas City (GSKC) since 2017. He is also the Founder & Chairman of Maldhari 
+                  Samaj of USA & Canada (MSUC), fostering unity and empowerment across the Maldhari community in North America.
+                </p>
+                <p>
+                  Further extending his cultural leadership, he serves as Chairman – Cultural at the Federation of Gujarati 
+                  Associations (FOGA), actively promoting Gujarati heritage on a global platform.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Buttons */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="flex flex-wrap items-center gap-4"
+            >
+              <Link
+                to="/story"
+                className="px-10 py-4 bg-[#C8102E] hover:bg-[#a50d24] text-white font-display font-bold uppercase tracking-widest text-sm rounded-full transition-all hover:shadow-lg hover:shadow-red-900/20"
+              >
+                EXPLORE JOURNEY
+              </Link>
+              <Link
+                to="/contact"
+                className="px-10 py-4 bg-white border-2 border-black hover:bg-black hover:text-white text-black font-display font-bold uppercase tracking-widest text-sm rounded-full transition-all"
+              >
+                CONTACT
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* ============================================================ */
 /* Home Page                                                      */
 /* ============================================================ */
 const Home = () => {
-  // Top promo bar (like Tony's)
+  const [loading, setLoading] = useState(true);
   const [showPromo, setShowPromo] = useState(true);
+  const [expanded, setExpanded] = useState(false);
+
   useEffect(() => {
     if (sessionStorage.getItem('promo_dismissed')) setShowPromo(false);
+    
+    // Simulate loading for better UX and to show skeletons
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 600);
+    return () => clearTimeout(timer);
   }, []);
-   const [expanded, setExpanded] = useState(false);
+
+  if (loading) {
+    return (
+      <div className="bg-white">
+        {/* Hero Skeleton */}
+        <section className="relative min-h-screen flex items-center overflow-hidden bg-neutral-100">
+          <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 w-full pt-32 pb-24">
+            <div className="max-w-3xl space-y-6">
+              <Skeleton className="h-20 w-3/4" />
+              <Skeleton className="h-20 w-1/2" />
+              <Skeleton className="h-6 w-2/3 mt-8" />
+              <div className="flex gap-4 mt-10">
+                <Skeleton className="h-12 w-40 rounded-full" />
+                <Skeleton className="h-6 w-32 mt-3" />
+              </div>
+            </div>
+          </div>
+          <div className="absolute right-0 top-0 h-full w-[45%] hidden lg:block">
+            <Skeleton className="h-full w-full" />
+          </div>
+        </section>
+
+        {/* Carousel Skeleton */}
+        <section className="py-24 md:py-28">
+          <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+              <Skeleton className="h-16 w-1/2" />
+              <Skeleton className="h-6 w-32" />
+            </div>
+            <div className="flex gap-5 overflow-hidden">
+              {[1, 2, 3, 4].map((i) => (
+                <Skeleton key={i} className="shrink-0 w-[300px] md:w-[340px] h-[440px] rounded-3xl" />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Video Skeleton */}
+        <section className="py-32 md:py-40 bg-neutral-900">
+          <div className="max-w-3xl mx-auto px-6 text-center space-y-6 flex flex-col items-center">
+            <Skeleton className="h-4 w-24 bg-white/10" />
+            <Skeleton className="h-20 w-full bg-white/10" />
+            <Skeleton className="h-6 w-2/3 bg-white/10" />
+            <Skeleton className="h-12 w-40 rounded-full bg-white/10 mt-4" />
+          </div>
+        </section>
+      </div>
+    );
+  }
 
   return (
     <div className="bg-white">
       {/* ===== HERO ===== */}
      <section className="relative text-white min-h-screen flex items-center overflow-hidden bg-blue-950 grain">
         <div className="absolute inset-0 flex justify-end">
-          <div className="relative w-full lg:w-[55%] h-full">
+          <motion.div 
+            className="relative w-full lg:w-[55%] h-full"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.2, ease: [0.21, 0.45, 0.32, 0.9] }}
+          >
             <img
               src={HERO_IMAGE}
               alt="Dev Bharwad"
@@ -347,7 +591,7 @@ const Home = () => {
             />
             {/* Soft blend from the image into the black background of the left side */}
             <div className="absolute inset-y-0 -left-1 w-full bg-gradient-to-r from-blue-950  to-transparent" />
-          </div>
+          </motion.div>
           
           {/* Mobile overlay to ensure text contrast */}
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/10 to-transparent lg:hidden grain" />
@@ -357,22 +601,39 @@ const Home = () => {
         </div>
 
         <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 w-full pt-32 pb-24">
-          <div className="max-w-3xl fade-up">
+          <motion.div 
+            className="max-w-3xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.21, 0.45, 0.32, 0.9] }}
+          >
             <h1
               className="font-display font-extrabold leading-[0.95] text-[12vw] md:text-[7.5vw] lg:text-[6.5rem]"
               style={{ letterSpacing: '-0.04em' }}
             >
-              Life is
-              <br />
-              extraordinary.
-              <br />
-              <span style={{ color: '#C8102E' }}>Unleash yours.</span>
+              <TitleReveal>
+                Life is
+                <br />
+                extraordinary.
+                <br />
+                <span style={{ color: '#C8102E' }}>Unleash yours.</span>
+              </TitleReveal>
             </h1>
-            <p className="mt-8 text-lg md:text-xl text-white/80 max-w-xl">
+            <motion.p 
+              className="mt-8 text-lg md:text-xl text-white/80 max-w-xl"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               The official site of Dev Bharwad — entrepreneur, community leader, and cultural
               torchbearer of the global Gujarati diaspora.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+            </motion.p>
+            <motion.div 
+              className="mt-10 flex flex-wrap items-center gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
               <Link
                 to="/story"
                 className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#C8102E] hover:bg-[#a50d24] font-display font-semibold text-sm uppercase tracking-widest transition-colors"
@@ -385,8 +646,8 @@ const Home = () => {
               >
                 Next Event ›
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
         {/* Floating event card (bottom-right) */}
@@ -422,13 +683,17 @@ const Home = () => {
       </section>
 
 
+      {/* ===== ABOUT US ===== */}
+      <AboutSection />
+
+
       {/* ===== EVENTS THAT LIBERATE (carousel) ===== */}
       <section className="py-24 md:py-28">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <ScrollReveal direction="up">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
               <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.95] text-black" style={{ letterSpacing: '-0.03em' }}>
-                Events that liberate
+                <TitleReveal>Events that liberate</TitleReveal>
               </h2>
               <Link
                 to="/events"
@@ -501,9 +766,11 @@ const Home = () => {
               className="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.95]"
               style={{ letterSpacing: '-0.03em' }}
             >
-              Master every area
-              <br />
-              of your <span style={{ color: '#C8102E' }}>life</span>.
+              <TitleReveal>
+                Master every area
+                <br />
+                of your <span style={{ color: '#C8102E' }}>life</span>.
+              </TitleReveal>
             </h2>
             <p className="mt-8 text-lg text-white/85 max-w-xl mx-auto">
               Close the gap between where you are and where you want to be — with the principles
@@ -607,9 +874,11 @@ const Home = () => {
                 className="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.95]"
                 style={{ letterSpacing: '-0.03em' }}
               >
-                Bharwad equals
-                <br />
-                <span style={{ color: '#C8102E' }}>impact.</span>
+                <TitleReveal>
+                  Bharwad equals
+                  <br />
+                  <span style={{ color: '#C8102E' }}>impact.</span>
+                </TitleReveal>
               </h2>
             </ScrollReveal>
             <ScrollReveal className="lg:col-span-7" direction="left" delay={0.2}>
