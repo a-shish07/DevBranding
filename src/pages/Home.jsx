@@ -148,21 +148,41 @@ const PillarsSection = () => {
                 key={p.name}
                 onMouseEnter={() => setActive(i)}
                 onFocus={() => setActive(i)}
+                onClick={() => setActive(i)}
                 tabIndex={0}
-                className="group flex items-center justify-between py-5 cursor-pointer"
+                className="group py-5 cursor-pointer flex flex-col"
               >
-                <span
-                  className={`font-display text-3xl md:text-5xl font-extrabold transition-colors ${
-                    i === active ? 'text-white' : 'text-white/40 hover:text-white'
-                  }`}
-                  style={{ letterSpacing: '-0.02em' }}
-                >
-                  {p.name}
-                </span>
-                <span className="flex items-center gap-2 text-xs uppercase tracking-widest text-white/60 group-hover:text-[#ff8194] transition-colors">
-                  Explore
-                  <ArrowUpRight size={16} />
-                </span>
+                <div className="flex items-center justify-between w-full">
+                  <span
+                    className={`font-display text-3xl md:text-5xl font-extrabold transition-colors ${
+                      i === active ? 'text-white' : 'text-white/40 hover:text-white'
+                    }`}
+                    style={{ letterSpacing: '-0.02em' }}
+                  >
+                    {p.name}
+                  </span>
+                  <span className={`flex items-center gap-2 text-xs uppercase tracking-widest transition-colors ${
+                    i === active ? 'text-[#ff8194]' : 'text-white/60 group-hover:text-[#ff8194]'
+                  }`}>
+                    {i === active ? 'Active' : 'Explore'}
+                    <ArrowUpRight size={16} className={`transition-transform duration-300 ${i === active ? 'rotate-45' : ''}`} />
+                  </span>
+                </div>
+                <AnimatePresence>
+                  {i === active && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                      animate={{ height: 'auto', opacity: 1, marginTop: 16 }}
+                      exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <p className="text-white/70 text-lg leading-relaxed max-w-xl">
+                        {p.desc}
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </li>
             ))}
           </ul>

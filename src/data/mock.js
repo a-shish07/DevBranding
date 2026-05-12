@@ -16,7 +16,7 @@ export const NAV_LINKS = [
   { label: 'Events', path: '/events' },
   { label: 'Awards', path: '/achievements' },
   { label: 'Businesses', path: '/businesses' },
-  { label: 'Media / Blogs', path: '/media' },
+  { label: 'Media / Gallery', path: '/media' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -179,38 +179,45 @@ export const EVENTS = [
 export const PILLARS = [
   {
     name: 'Vision',
+    desc: 'Strategic leadership guided by a clear perspective on the future of community and commerce.',
     image:
-      'https://images.unsplash.com/photo-1652876256405-3902cc201b22?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBidWlsZGluZyUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3Nzc5OTEyMDh8MA&ixlib=rb-4.1.0&q=85',
+      '/second.jpeg',
   },
   {
     name: 'Heritage',
+    desc: 'Preserving and celebrating the deep-rooted traditions of the global Gujarati diaspora.',
     image:
       'https://images.pexels.com/photos/6327491/pexels-photo-6327491.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
   },
   {
     name: 'Community',
+    desc: 'Uniting people through shared values, collective growth, and unwavering support.',
     image:
-      'https://images.unsplash.com/photo-1660015155339-c224fae66104?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwxfHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85',
+      '/third.jpeg',
   },
   {
     name: 'Family',
+    desc: 'The foundational core that inspires every decision and every long-term legacy.',
     image:
-      'https://images.unsplash.com/photo-1763733593826-d51c270cc8b4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHw0fHxndWphcmF0aSUyMGNvbW11bml0eSUyMGdhdGhlcmluZ3xlbnwwfHx8fDE3Nzc5OTExOTV8MA&ixlib=rb-4.1.0&q=85',
+      '/first.jpeg',
   },
   {
     name: 'Discipline',
+    desc: 'Commitment to the rigorous habits and principles that drive extraordinary results.',
     image:
-      'https://images.unsplash.com/photo-1771244688590-1e481dba1b5a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxpbmRpYW4lMjBidXNpbmVzc21hbiUyMHN1aXR8ZW58MHx8fHwxNzc3OTkxMTk1fDA&ixlib=rb-4.1.0&q=85',
+      '/fourth.jpeg',
   },
   {
     name: 'Service',
+    desc: 'A lifelong promise to give back and uplift those around us without expectation.',
     image:
-      'https://images.unsplash.com/photo-1762158007969-eb58e74ee3d3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1ODh8MHwxfHNlYXJjaHwxfHxzcGVha2luZyUyMHN0YWdlJTIwbGVhZGVyc2hpcHxlbnwwfHx8fDE3Nzc5OTEyMDh8MA&ixlib=rb-4.1.0&q=85',
+      '/second.jpeg',
   },
   {
     name: 'Leadership',
+    desc: 'Quiet authority built on trust, humility, and the courage to lead by example.',
     image:
-      'https://images.unsplash.com/photo-1659353220660-710d4c28c673?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwzfHxpbmRpYW4lMjBidXNpbmVzc21hbiUyMHN1aXR8ZW58MHx8fHwxNzc3OTkxMTk1fDA&ixlib=rb-4.1.0&q=85',
+      '/third.jpeg',
   },
 ];
 
@@ -226,12 +233,12 @@ export const TESTIMONIALS = [
       'Dev is the rare leader who understands that legacy is built one relationship at a time. His work for the diaspora is unmatched.',
   },
   {
-    name: 'Anita Shah',
+    name: 'Anit Shah',
     role: 'Director — Cultural Foundation of America',
     portrait:
-      'https://in.pinterest.com/pin/323555554494893924/',
+      'https://images.unsplash.com/photo-1530268729831-4b0b9e170218?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW5kaWFuJTIwcGVvcGxlfGVufDB8fDB8fHww',
     avatar:
-      'https://in.pinterest.com/pin/707628160247163425/',
+      'https://images.unsplash.com/photo-1530268729831-4b0b9e170218?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aW5kaWFuJTIwcGVvcGxlfGVufDB8fDB8fHww',
     quote:
       'When Dev speaks, the room listens. When he commits, the work gets done. He is the engine behind so many quiet wins for our community.',
   },
@@ -249,7 +256,7 @@ export const TESTIMONIALS = [
     name: 'Priya Desai',
     role: 'Trustee — Education for All Trust',
     portrait:
-      'https://images.unsplash.com/photo-1650110002977-3ee8cc5eac91?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwyfHxpbmRpYW4lMjBidXNpbmVzc21hbiUyMHN1aXR8ZW58MHx8fHwxNzc3OTkxMTk1fDA&ixlib=rb-4.1.0&q=85',
+      'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGFtZXJpY2FuJTIwd29tYW58ZW58MHx8MHx8fDA%3D',
     avatar:
       'https://images.unsplash.com/photo-1650110002977-3ee8cc5eac91?crop=faces&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwyfHxpbmRpYW4lMjBidXNpbmVzc21hbiUyMHN1aXR8ZW58MHx8fHwxNzc3OTkxMTk1fDA&ixlib=rb-4.1.0&q=85&w=200&h=200',
     quote:
@@ -354,24 +361,36 @@ export const NEWS = [
   },
 ];
 
-export const BLOGS = [
+export const GALLERY = [
   {
-    type: 'Blog',
-    date: 'May 2025',
-    title: 'Why Community Comes First',
-    excerpt:
-      'On building a life where success is measured by how many people you lift along the way.',
-    image:
-      '/third.jpeg',
+    title: 'Community Gathering',
+    description: 'Celebrating our roots with the local community in Kansas City.',
+    image: '/first.jpeg',
   },
   {
-    type: 'Blog',
-    date: 'February 2025',
-    title: 'From Ahmedabad to America: Lessons in Reinvention',
-    excerpt:
-      'Six lessons learned crossing oceans, building businesses, and staying rooted in who you are.',
-    image:
-      '/first.jpeg',
+    title: 'Cultural Festival',
+    description: 'Promoting Gujarati heritage through dance and music.',
+    image: '/second.jpeg',
+  },
+  {
+    title: 'Leadership Summit',
+    description: 'Sharing vision and values at the annual leadership conference.',
+    image: '/third.jpeg',
+  },
+  {
+    title: 'Business Excellence',
+    description: 'Recognized for innovation and growth in the hospitality sector.',
+    image: '/fourth.jpeg',
+  },
+  {
+    title: 'Heritage Event',
+    description: 'A moment of reflection on our journey and traditions.',
+    image: '/first.jpeg',
+  },
+  {
+    title: 'Global Vision',
+    description: 'Building bridges across continents and cultures.',
+    image: '/second.jpeg',
   },
 ];
 
