@@ -29,14 +29,14 @@ const Footer = () => {
             <h3 className="font-display uppercase text-4xl md:text-5xl leading-[0.95] font-bold">
               Let&apos;s build something
               <br />
-              <span style={{ color: '#C8102E' }}>that matters.</span>
+              <span style={{ color: '#E6C87E' }}>that matters.</span>
             </h3>
             <p className="mt-6 text-white/70 max-w-md">
               For collaborations, speaking engagements, or community initiatives — reach out and start a conversation.
             </p>
             <Link
               to="/contact"
-              className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#C8102E] hover:bg-[#a50d24] font-display uppercase tracking-widest text-sm transition-colors"
+              className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#E6C87E] hover:bg-[#C5A059] font-display uppercase tracking-widest text-sm transition-colors"
             >
               Get In Touch <ArrowUpRight size={16} />
             </Link>
@@ -64,7 +64,7 @@ const Footer = () => {
                     href={s.url}
                     className="flex items-center gap-3 text-white/80 hover:text-white transition-colors group"
                   >
-                    <span className="w-9 h-9 border border-white/20 flex items-center justify-center group-hover:border-[#C8102E] group-hover:text-[#C8102E] transition-colors">
+                    <span className="w-9 h-9 border border-white/20 flex items-center justify-center group-hover:border-[#E6C87E] group-hover:text-[#E6C87E] transition-colors">
                       {iconFor(s.name)}
                     </span>
                     <span>

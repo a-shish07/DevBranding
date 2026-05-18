@@ -7,19 +7,19 @@ import TitleReveal from '../components/ui/title-reveal';
 
 const Story = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-black">
       {/* Page hero */}
       <section className="relative bg-black text-white pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0  " />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 relative">
           <ScrollReveal direction="up">
-            <p className="font-display uppercase tracking-[0.3em] text-xs text-[#C8102E]">Chapter Index</p>
+            <p className="font-display uppercase tracking-[0.3em] text-xs text-[#E6C87E]">Chapter Index</p>
             <h1 className="font-display uppercase text-6xl md:text-8xl lg:text-[10rem] font-bold leading-[0.9] mt-4">
               <TitleReveal>
-                THE <span style={{ color: '#C8102E' }}>STORY</span>
+                THE <span style={{ color: '#E6C87E' }}>STORY</span>
               </TitleReveal>
             </h1>
-            <p className="font-serif-italic text-xl md:text-2xl mt-6 max-w-2xl text-white/80">
+            <p className="font-serif-italic text-xl md:text-2xl mt-6 max-w-2xl text-neutral-400">
               A journey that bridges grassroots values with global vision — told in six chapters.
             </p>
           </ScrollReveal>
@@ -52,19 +52,19 @@ const Story = () => {
                   delay={0.2}
                 >
                   <p
-                    className="font-display text-[#C8102E] text-7xl md:text-8xl font-bold leading-none"
+                    className="font-display text-[#E6C87E] text-7xl md:text-8xl font-bold leading-none"
                     style={{ letterSpacing: '-0.04em' }}
                   >
                     {c.no}
                   </p>
                   <h2
-                    className="font-display uppercase text-4xl md:text-5xl font-bold leading-[0.95] mt-2 text-black"
+                    className="font-display uppercase text-4xl md:text-5xl font-bold leading-[0.95] mt-2 text-white"
                     style={{ letterSpacing: '-0.01em' }}
                   >
                     <TitleReveal>{c.title}</TitleReveal>
                   </h2>
-                  <div className="divider-red mt-6" />
-                  <p className="mt-6 text-lg text-neutral-700 leading-relaxed max-w-xl">{c.text}</p>
+                  <div className="divider-gold mt-6" />
+                  <p className="mt-6 text-lg text-neutral-400 leading-relaxed max-w-xl">{c.text}</p>
                 </ScrollReveal>
               </div>
             );
@@ -85,12 +85,12 @@ const Story = () => {
             <TitleReveal>
               The story continues.
               <br />
-              <span style={{ color: '#C8102E' }}>Be part of it.</span>
+              <span style={{ color: '#E6C87E' }}>Be part of it.</span>
             </TitleReveal>
           </h2>
           <Link
             to="/contact"
-            className="mt-10 inline-flex items-center gap-2 px-7 py-4 bg-[#C8102E] hover:bg-[#a50d24] font-display uppercase tracking-widest text-sm transition-colors"
+            className="mt-10 inline-flex items-center gap-2 px-7 py-4 bg-[#E6C87E] hover:bg-[#C5A059] font-display uppercase tracking-widest text-sm transition-colors"
           >
             Connect With Dev <ArrowRight size={14} />
           </Link>

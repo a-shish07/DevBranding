@@ -34,30 +34,32 @@ code {
 
 @layer base {
   :root {
-        --background: 0 0% 100%;
-        --foreground: 0 0% 5%;
-        --card: 0 0% 100%;
-        --card-foreground: 0 0% 5%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 0 0% 5%;
-        --primary: 351 100% 39%;
-        --primary-foreground: 0 0% 100%;
-        --secondary: 0 0% 96.1%;
-        --secondary-foreground: 0 0% 9%;
-        --muted: 0 0% 96.1%;
-        --muted-foreground: 0 0% 35%;
-        --accent: 0 0% 96.1%;
-        --accent-foreground: 0 0% 9%;
-        --destructive: 0 84.2% 60.2%;
+        --background: 0 0% 0%;
+        --foreground: 0 0% 100%;
+        --card: 0 0% 3%;
+        --card-foreground: 0 0% 100%;
+        --popover: 0 0% 3%;
+        --popover-foreground: 0 0% 100%;
+        --primary: 43 74% 66%;
+        --primary-foreground: 0 0% 0%;
+        --secondary: 0 0% 15%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 0 0% 63%;
+        --muted-foreground: 0 0% 63%;
+        --accent: 0 0% 15%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 62.8% 30.6%;
         --destructive-foreground: 0 0% 98%;
-        --border: 0 0% 89.8%;
-        --input: 0 0% 89.8%;
-        --ring: 351 100% 39%;
-        --radius: 0.25rem;
+        --border: 0 0% 15%;
+        --input: 0 0% 15%;
+        --ring: 43 74% 66%;
+        --radius: 0.5rem;
+        --brand-gold: 43 74% 66%;
     }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', Georgia, serif;
+    color: hsl(var(--brand-gold));
   }
 }
 
@@ -67,14 +69,15 @@ code {
     }
   body {
     @apply bg-background text-foreground;
+    background-color: #000000;
     }
 }
 
 /* Brand utilities */
-.brand-red { color: #C8102E; }
-.bg-brand-red { background-color: #C8102E; }
-.bg-brand-black { background-color: #0a0a0a; }
-.border-brand-red { border-color: #C8102E; }
+.brand-gold { color: #E6C87E; }
+.bg-brand-gold { background-color: #E6C87E; }
+.bg-brand-black { background-color: #000000; }
+.border-brand-gold { border-color: #E6C87E; }
 
 html { scroll-behavior: smooth; }
 
@@ -94,7 +97,7 @@ html { scroll-behavior: smooth; }
 .nav-underline { position: relative; }
 .nav-underline::after {
     content: ''; position: absolute; left: 0; bottom: -6px;
-    width: 0; height: 2px; background-color: #C8102E;
+    width: 0; height: 2px; background-color: #E6C87E;
     transition: width 0.3s ease;
 }
 .nav-underline:hover::after { width: 100%; }
@@ -130,7 +133,7 @@ html { scroll-behavior: smooth; }
 .marquee-track { animation: marquee 40s linear infinite; width: max-content; }
 
 /* Section divider */
-.divider-red { width: 64px; height: 3px; background: #C8102E; }
+.divider-gold { width: 64px; height: 3px; background: #E6C87E; }
 
 /* Carousel scrollbar hide */
 .scrollbar-hide::-webkit-scrollbar { display: none; }
@@ -142,8 +145,8 @@ html { scroll-behavior: smooth; }
 
 /* Play button pulse */
 @keyframes pulseRing {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(200, 16, 46, 0.55); }
-    50% { box-shadow: 0 0 0 14px rgba(200, 16, 46, 0); }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(230, 200, 126, 0.55); }
+    50% { box-shadow: 0 0 0 14px rgba(230, 200, 126, 0); }
 }
 .play-pulse { animation: pulseRing 2.2s ease-in-out infinite; }
 
@@ -161,18 +164,18 @@ html { scroll-behavior: smooth; }
   width: 4px;
 }
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #1a1a1a;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #C8102E;
+  background: #E6C87E;
   border-radius: 10px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #a50d24;
+  background: #C5A059;
 }
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #C8102E #f1f1f1;
+  scrollbar-color: #E6C87E #1a1a1a;
 }
 
 .grain{

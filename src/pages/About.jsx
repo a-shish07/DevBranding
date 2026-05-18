@@ -77,18 +77,18 @@ const Section = ({ section, index, setActiveSection }) => {
       viewport={{ once: false, margin: "-20%" }}
       className="min-h-[70vh] flex flex-col justify-center py-24"
     >
-      <p className="font-condensed uppercase tracking-[0.3em] text-xs text-[#C8102E] mb-4">
+      <p className="font-condensed uppercase tracking-[0.3em] text-xs text-[#E6C87E] mb-4">
         {section.id.replace('-', ' ')}
       </p>
       <h2 
-        className="font-display uppercase text-4xl md:text-5xl font-extrabold leading-tight text-black mb-8"
+        className="font-display uppercase text-4xl md:text-5xl font-extrabold leading-tight text-white mb-8"
         style={{ letterSpacing: '-0.02em' }}
       >
         <TitleReveal>{section.title}</TitleReveal>
       </h2>
       <div className="space-y-6">
         {section.content.map((text, idx) => (
-          <p key={idx} className="text-lg text-neutral-700 leading-relaxed">
+          <p key={idx} className="text-lg text-neutral-400 leading-relaxed">
             {text}
           </p>
         ))}
@@ -120,16 +120,16 @@ const About = () => {
 
   if (loading) {
     return (
-      <div className="bg-white">
+      <div className="bg-black">
         <section className="relative bg-neutral-900 pt-40 pb-24 min-h-[80vh] flex items-center">
           <div className="max-w-[1400px] mx-auto px-6 lg:px-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-7 space-y-6">
-              <Skeleton className="h-4 w-24 bg-white/10" />
-              <Skeleton className="h-32 w-full bg-white/10" />
-              <Skeleton className="h-20 w-3/4 bg-white/10" />
+              <Skeleton className="h-4 w-24 bg-black/10" />
+              <Skeleton className="h-32 w-full bg-black/10" />
+              <Skeleton className="h-20 w-3/4 bg-black/10" />
             </div>
             <div className="lg:col-span-5">
-              <Skeleton className="aspect-[4/5] w-full rounded-2xl bg-white/10" />
+              <Skeleton className="aspect-[4/5] w-full rounded-2xl bg-black/10" />
             </div>
           </div>
         </section>
@@ -154,7 +154,7 @@ const About = () => {
   }
 
   return (
-    <div className="bg-white">
+    <div className="bg-black">
       {/* Header */}
       <section className="relative bg-black text-white pt-40 pb-24 overflow-hidden min-h-[80vh] flex items-center">
         <div className="absolute inset-0   opacity-20" />
@@ -167,17 +167,17 @@ const About = () => {
               transition={{ duration: 0.8 }}
               className="lg:col-span-7"
             >
-              <p className="font-condensed uppercase tracking-[0.3em] text-xs text-[#C8102E]">The Founder</p>
+              <p className="font-condensed uppercase tracking-[0.3em] text-xs text-[#E6C87E]">The Founder</p>
               <h1 
                 className="font-display uppercase text-6xl md:text-8xl lg:text-[8rem] font-extrabold leading-[0.9] mt-4"
                 style={{ letterSpacing: '-0.04em' }}
               >
                 <TitleReveal>
                   ABOUT <br />
-                  <span className="text-[#C8102E]">DEV BHARWAD</span>
+                  <span className="text-[#E6C87E]">DEV BHARWAD</span>
                 </TitleReveal>
               </h1>
-              <p className="font-serif-italic text-xl md:text-2xl mt-8 max-w-2xl text-white/80 leading-relaxed">
+              <p className="font-serif-italic text-xl md:text-2xl mt-8 max-w-2xl text-neutral-400 leading-relaxed">
                 Entrepreneur. Community Leader. Cultural Torchbearer. <br className="hidden md:block" />
                 A journey that bridges grassroots values with global vision.
               </p>
@@ -199,7 +199,7 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
               </div>
               {/* Decorative element */}
-              <div className="absolute -bottom-6 -left-6 w-24 h-24 border-l-2 border-b-2 border-[#C8102E] pointer-events-none" />
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 border-l-2 border-b-2 border-[#E6C87E] pointer-events-none" />
             </motion.div>
           </div>
         </div>
@@ -267,7 +267,7 @@ const About = () => {
       </section>
 
       {/* Stats/Highlight Section */}
-      <section className="bg-neutral-50 py-24 border-y border-neutral-100">
+      <section className="bg-neutral-900 py-24 border-y border-neutral-100">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
             <motion.div
@@ -276,8 +276,8 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <h3 className="font-display text-5xl font-extrabold text-[#C8102E]">2003</h3>
-              <p className="mt-2 text-neutral-500 uppercase tracking-widest text-xs font-condensed">Relocated to USA</p>
+              <h3 className="font-display text-5xl font-extrabold text-[#E6C87E]">2003</h3>
+              <p className="mt-2 text-neutral-400 uppercase tracking-widest text-xs font-condensed">Relocated to USA</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -285,8 +285,8 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <h3 className="font-display text-5xl font-extrabold text-[#C8102E]">2017</h3>
-              <p className="mt-2 text-neutral-500 uppercase tracking-widest text-xs font-condensed">President of GSKC</p>
+              <h3 className="font-display text-5xl font-extrabold text-[#E6C87E]">2017</h3>
+              <p className="mt-2 text-neutral-400 uppercase tracking-widest text-xs font-condensed">President of GSKC</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -294,8 +294,8 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              <h3 className="font-display text-5xl font-extrabold text-[#C8102E]">AOD</h3>
-              <p className="mt-2 text-neutral-500 uppercase tracking-widest text-xs font-condensed">Group of Companies</p>
+              <h3 className="font-display text-5xl font-extrabold text-[#E6C87E]">AOD</h3>
+              <p className="mt-2 text-neutral-400 uppercase tracking-widest text-xs font-condensed">Group of Companies</p>
             </motion.div>
           </div>
         </div>
@@ -312,7 +312,7 @@ const About = () => {
           <p className="font-serif-italic text-3xl md:text-5xl leading-tight">
             "Leadership is a harmonious blend of entrepreneurial excellence, cultural commitment, and community service."
           </p>
-          <div className="divider-red mx-auto mt-10 w-24" />
+          <div className="divider-gold mx-auto mt-10 w-24" />
           <p className="mt-8 font-condensed uppercase tracking-[0.4em] text-sm text-neutral-400">
             Dev Bharwad
           </p>

@@ -8,7 +8,7 @@ const icons = [Trophy, Award, Star, Award];
 
 const Achievements = () => {
   return (
-    <div className="bg-white overflow-hidden">
+    <div className="bg-black overflow-hidden">
       {/* HERO SECTION */}
       <section className="relative min-h-[65vh] flex items-center text-white overflow-hidden">
         <img
@@ -24,18 +24,18 @@ const Achievements = () => {
         <div className="relative max-w-7xl mx-auto px-6 lg:px-12 w-full lg:mt-32">
           <ScrollReveal direction="up">
             <div className="max-w-3xl">
-              <p className="font-display uppercase tracking-[0.35em] text-xs text-[#C8102E] mb-5 ">
+              <p className="font-display uppercase tracking-[0.35em] text-xs text-[#E6C87E] mb-5 ">
                 Recognition & Excellence
               </p>
 
               <h1 className="font-display uppercase font-black leading-[0.9] tracking-tight text-4xl sm:text-6xl md:text-7xl lg:text-[6rem]">
                 <TitleReveal>
                   Awards &
-                  <span className="block text-[#C8102E]">Honors</span>
+                  <span className="block text-[#E6C87E]">Honors</span>
                 </TitleReveal>
               </h1>
 
-              <p className="mt-6 text-base md:text-lg text-white/75 leading-relaxed max-w-xl mb-5">
+              <p className="mt-6 text-base md:text-lg text-neutral-400 leading-relaxed max-w-xl mb-5">
                 Celebrating milestones, leadership, and contributions that
                 continue to inspire meaningful impact across industries and
                 communities.
@@ -51,21 +51,21 @@ const Achievements = () => {
           <ScrollReveal direction="up">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
               <div>
-                <p className="font-display uppercase tracking-[0.35em] text-[11px] text-[#C8102E] mb-3">
+                <p className="font-display uppercase tracking-[0.35em] text-[11px] text-[#E6C87E] mb-3">
                   Awards
                 </p>
 
-                <h2 className="font-display uppercase text-3xl md:text-5xl font-black leading-[0.95] tracking-tight text-black">
+                <h2 className="font-display uppercase text-3xl md:text-5xl font-black leading-[0.95] tracking-tight text-white">
                   <TitleReveal>
                     Legacy of
-                    <span className="block text-[#C8102E]">
+                    <span className="block text-[#E6C87E]">
                       Recognition
                     </span>
                   </TitleReveal>
                 </h2>
               </div>
 
-              <p className="max-w-lg text-neutral-600 text-base leading-relaxed">
+              <p className="max-w-lg text-neutral-400 text-base leading-relaxed">
                 A collection of recognitions earned through dedication,
                 innovation, leadership, and commitment to excellence.
               </p>
@@ -102,14 +102,14 @@ const Achievements = () => {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
 
                         {/* YEAR */}
-                        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-md">
-                          <span className="font-display text-xs tracking-[0.2em] font-bold text-black">
+                        <div className="absolute top-4 left-4 bg-black/95 backdrop-blur-md px-4 py-1.5 rounded-full shadow-md">
+                          <span className="font-display text-xs tracking-[0.2em] font-bold text-white">
                             {a.year}
                           </span>
                         </div>
 
                         {/* ICON */}
-                        <div className="absolute bottom-4 right-4 w-12 h-12 rounded-xl bg-[#C8102E] text-white flex items-center justify-center shadow-lg transition-all duration-500 group-hover:scale-110">
+                        <div className="absolute bottom-4 right-4 w-12 h-12 rounded-xl bg-[#E6C87E] text-white flex items-center justify-center shadow-lg transition-all duration-500 group-hover:scale-110">
                           <Icon size={20} />
                         </div>
                       </div>
@@ -120,22 +120,22 @@ const Achievements = () => {
                       direction={isEven ? 'right' : 'left'}
                     >
                       <div className="max-w-lg">
-                        <p className="font-display uppercase tracking-[0.3em] text-[12px] font-bold text-[#C8102E] mb-3">
+                        <p className="font-display uppercase tracking-[0.3em] text-[12px] font-bold text-[#E6C87E] mb-3">
                           {a.org}
                         </p>
 
-                        <h3 className="font-display uppercase text-2xl md:text-4xl font-black leading-tight tracking-tight text-black mb-5">
+                        <h3 className="font-display uppercase text-2xl md:text-4xl font-black leading-tight tracking-tight text-white mb-5">
                           <TitleReveal>{a.title}</TitleReveal>
                         </h3>
 
-                        <p className="text-neutral-600 text-base leading-relaxed mb-6">
+                        <p className="text-neutral-400 text-base leading-relaxed mb-6">
                           {a.text}
                         </p>
 
                         <div className="flex items-center gap-3">
-                          <div className="w-10 h-px bg-[#C8102E]" />
+                          <div className="w-10 h-px bg-[#E6C87E]" />
 
-                          <span className="font-display uppercase tracking-[0.2em] text-[11px] font-bold text-neutral-700">
+                          <span className="font-display uppercase tracking-[0.2em] text-[11px] font-bold text-neutral-400">
                             Official Recognition
                           </span>
                         </div>
@@ -150,24 +150,24 @@ const Achievements = () => {
       </section>
 
       {/* QUOTE SECTION */}
-      <section className="relative py-16 md:py-24 bg-neutral-50 overflow-hidden">
+      <section className="relative py-16 md:py-24 bg-neutral-900 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:22px_22px] opacity-40" />
 
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <ScrollReveal direction="up">
-            <div className="w-16 h-16 rounded-full bg-[#C8102E]/10 flex items-center justify-center mx-auto mb-8">
-              <Trophy className="text-[#C8102E]" size={30} />
+            <div className="w-16 h-16 rounded-full bg-[#E6C87E]/10 flex items-center justify-center mx-auto mb-8">
+              <Trophy className="text-[#E6C87E]" size={30} />
             </div>
 
-            <h2 className="font-serif-italic text-2xl md:text-4xl leading-tight text-black">
+            <h2 className="font-serif-italic text-2xl md:text-4xl leading-tight text-white">
               “Leadership is not about titles or recognition.
               It is about creating impact that inspires others.”
             </h2>
 
             <div className="mt-10 flex items-center justify-center gap-3">
-              <div className="w-12 h-px bg-[#C8102E]" />
-              <div className="w-2 h-2 rounded-full bg-[#C8102E]" />
-              <div className="w-12 h-px bg-[#C8102E]" />
+              <div className="w-12 h-px bg-[#E6C87E]" />
+              <div className="w-2 h-2 rounded-full bg-[#E6C87E]" />
+              <div className="w-12 h-px bg-[#E6C87E]" />
             </div>
           </ScrollReveal>
         </div>

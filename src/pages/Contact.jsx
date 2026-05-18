@@ -46,19 +46,19 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-black">
       {/* Hero */}
       <section className="relative bg-black text-white pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0  " />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 relative">
           <ScrollReveal direction="up">
-            <p className="font-display uppercase tracking-[0.3em] text-xs text-[#C8102E]">Reach Out</p>
+            <p className="font-display uppercase tracking-[0.3em] text-xs text-[#E6C87E]">Reach Out</p>
             <h1 className="font-display uppercase text-6xl md:text-8xl lg:text-[10rem] font-bold leading-[0.9] mt-4">
               <TitleReveal>
-                <span style={{ color: '#C8102E' }}>CONTACT</span>
+                <span style={{ color: '#E6C87E' }}>CONTACT</span>
               </TitleReveal>
             </h1>
-            <p className="font-serif-italic text-xl md:text-2xl mt-6 max-w-2xl text-white/80">
+            <p className="font-serif-italic text-xl md:text-2xl mt-6 max-w-2xl text-neutral-400">
               For collaborations, speaking, community work or media — start a conversation.
             </p>
           </ScrollReveal>
@@ -69,11 +69,11 @@ const Contact = () => {
       <section className="py-20 md:py-28">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12">
           <ScrollReveal className="lg:col-span-5" direction="right">
-            <h2 className="font-display uppercase text-4xl md:text-5xl font-bold leading-[0.95] text-black">
+            <h2 className="font-display uppercase text-4xl md:text-5xl font-bold leading-[0.95] text-white">
               <TitleReveal>Let&apos;s talk.</TitleReveal>
             </h2>
-            <div className="divider-red mt-6" />
-            <p className="mt-6 text-neutral-700 leading-relaxed max-w-md">
+            <div className="divider-gold mt-6" />
+            <p className="mt-6 text-neutral-400 leading-relaxed max-w-md">
               Whether it’s a community initiative, a business partnership, or a media inquiry,
               we’d love to hear from you.
             </p>
@@ -84,17 +84,17 @@ const Contact = () => {
 <ul className="mt-10 space-y-5">
   {/* Email item */}
   <ScrollReveal direction="left" delay={0.1}>
-    <li className="group flex items-start gap-4 p-2 -m-2 rounded-xl transition-all duration-300 hover:bg-[#C8102E]/5">
-      <span className="relative w-11 h-11 border border-[#C8102E] text-[#C8102E] flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-[#C8102E] group-hover:text-white group-hover:border-[#C8102E] group-hover:shadow-md group-hover:shadow-[#C8102E]/20">
+    <li className="group flex items-start gap-4 p-2 -m-2 rounded-xl transition-all duration-300 hover:bg-[#E6C87E]/10">
+      <span className="relative w-11 h-11 border border-[#E6C87E] text-[#E6C87E] flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-[#E6C87E] group-hover:text-white group-hover:border-[#E6C87E] group-hover:shadow-md group-hover:shadow-[#E6C87E]/20">
         <Mail size={18} className="transition-transform duration-300 group-hover:scale-110" />
       </span>
       <div>
-        <p className="font-display uppercase tracking-widest text-xs text-neutral-500 group-hover:text-[#C8102E] transition-colors">
+        <p className="font-display uppercase tracking-widest text-xs text-neutral-500 group-hover:text-[#E6C87E] transition-colors">
           Email
         </p>
         <a
           href={`mailto:${SITE.email}`}
-          className="text-black transition-colors duration-300 group-hover:text-[#C8102E]"
+          className="text-white transition-colors duration-300 group-hover:text-[#E6C87E]"
         >
           {SITE.email}
         </a>
@@ -104,15 +104,15 @@ const Contact = () => {
 
   {/* Location item */}
   <ScrollReveal direction="left" delay={0.2}>
-    <li className="group flex items-start gap-4 p-2 -m-2 rounded-xl transition-all duration-300 hover:bg-[#C8102E]/5">
-      <span className="relative w-11 h-11 border border-[#C8102E] text-[#C8102E] flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-[#C8102E] group-hover:text-white group-hover:border-[#C8102E] group-hover:shadow-md group-hover:shadow-[#C8102E]/20">
+    <li className="group flex items-start gap-4 p-2 -m-2 rounded-xl transition-all duration-300 hover:bg-[#E6C87E]/10">
+      <span className="relative w-11 h-11 border border-[#E6C87E] text-[#E6C87E] flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-[#E6C87E] group-hover:text-white group-hover:border-[#E6C87E] group-hover:shadow-md group-hover:shadow-[#E6C87E]/20">
         <MapPin size={18} className="transition-transform duration-300 group-hover:scale-110" />
       </span>
       <div>
-        <p className="font-display uppercase tracking-widest text-xs text-neutral-500 group-hover:text-[#C8102E] transition-colors">
+        <p className="font-display uppercase tracking-widest text-xs text-neutral-500 group-hover:text-[#E6C87E] transition-colors">
           Based In
         </p>
-        <p className="text-black transition-colors duration-300 group-hover:text-[#C8102E]">
+        <p className="text-white transition-colors duration-300 group-hover:text-[#E6C87E]">
           {SITE.location}
         </p>
       </div>
@@ -137,7 +137,7 @@ const Contact = () => {
         <a
           href={s.url}
           aria-label={s.name}
-          className="group relative w-11 h-11 border border-neutral-300 rounded-full flex items-center justify-center text-neutral-600 transition-all duration-300 hover:border-[#C8102E] hover:bg-[#C8102E] hover:text-white hover:shadow-md hover:shadow-[#C8102E]/20 hover:-translate-y-1"
+          className="group relative w-11 h-11 border border-neutral-800 rounded-full flex items-center justify-center text-neutral-600 transition-all duration-300 hover:border-[#E6C87E] hover:bg-[#E6C87E] hover:text-white hover:shadow-md hover:shadow-[#E6C87E]/20 hover:-translate-y-1"
         >
           {/* icon */}
           {iconFor(s.name)}
@@ -154,7 +154,7 @@ const Contact = () => {
           </ScrollReveal>
 
           <ScrollReveal className="lg:col-span-7" direction="left" delay={0.2}>
-            <form onSubmit={onSubmit} className="bg-neutral-50 p-8 md:p-10">
+            <form onSubmit={onSubmit} className="bg-neutral-900 p-8 md:p-10">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
                   <label className="font-display uppercase tracking-widest text-xs text-neutral-500">
@@ -165,7 +165,7 @@ const Contact = () => {
                     value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder="Your name"
-                    className="w-full mt-2 px-4 py-3 bg-white border border-neutral-300 focus:border-[#C8102E] focus:outline-none transition-colors"
+                    className="w-full mt-2 px-4 py-3 bg-black border border-neutral-800 focus:border-[#E6C87E] focus:outline-none transition-colors"
                   />
                 </div>
                 <div>
@@ -177,7 +177,7 @@ const Contact = () => {
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     placeholder="you@example.com"
-                    className="w-full mt-2 px-4 py-3 bg-white border border-neutral-300 focus:border-[#C8102E] focus:outline-none transition-colors"
+                    className="w-full mt-2 px-4 py-3 bg-black border border-neutral-800 focus:border-[#E6C87E] focus:outline-none transition-colors"
                   />
                 </div>
               </div>
@@ -190,7 +190,7 @@ const Contact = () => {
                   value={form.subject}
                   onChange={(e) => setForm({ ...form, subject: e.target.value })}
                   placeholder="What is this about?"
-                  className="w-full mt-2 px-4 py-3 bg-white border border-neutral-300 focus:border-[#C8102E] focus:outline-none transition-colors"
+                  className="w-full mt-2 px-4 py-3 bg-black border border-neutral-800 focus:border-[#E6C87E] focus:outline-none transition-colors"
                 />
               </div>
               <div className="mt-5">
@@ -202,13 +202,13 @@ const Contact = () => {
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   placeholder="Share your message..."
-                  className="w-full mt-2 px-4 py-3 bg-white border border-neutral-300 focus:border-[#C8102E] focus:outline-none transition-colors resize-none"
+                  className="w-full mt-2 px-4 py-3 bg-black border border-neutral-800 focus:border-[#E6C87E] focus:outline-none transition-colors resize-none"
                 />
               </div>
               <button
                 type="submit"
                 disabled={loading}
-                className="mt-6 inline-flex items-center gap-2 px-7 py-4 bg-[#C8102E] hover:bg-[#a50d24] disabled:opacity-60 disabled:cursor-not-allowed text-white font-display uppercase tracking-widest text-sm transition-colors"
+                className="mt-6 inline-flex items-center gap-2 px-7 py-4 bg-[#E6C87E] hover:bg-[#C5A059] disabled:opacity-60 disabled:cursor-not-allowed text-white font-display uppercase tracking-widest text-sm transition-colors"
               >
                 {loading ? 'Sending...' : 'Send Message'} <Send size={14} />
               </button>

@@ -60,15 +60,15 @@ const EventCarousel = ({ images, title }) => {
         ))}
       </div>
 
-      <CarouselPrevious className="left-4 bg-white/80 hover:bg-white text-black border-none" />
-      <CarouselNext className="right-4 bg-white/80 hover:bg-white text-black border-none" />
+      <CarouselPrevious className="left-4 bg-white border-none text-black" />
+      <CarouselNext className="right-4 bg-white border-none text-black" />
     </Carousel>
   );
 };
 
 const Events = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-black">
       {/* Hero */}
       <section className="relative bg-black text-white pt-32 pb-20 overflow-hidden">
         <img
@@ -80,13 +80,13 @@ const Events = () => {
         <div className="absolute inset-0  " />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 relative">
           <ScrollReveal direction="up">
-            <p className="font-display uppercase tracking-[0.3em] text-xs text-[#C8102E]">Community & Culture</p>
-           <h1 className="font-display uppercase text-6xl md:text-8xl lg:text-[10rem] font-bold leading-[0.9] mt-4 text-[#C8102E]">
+            <p className="font-display uppercase tracking-[0.3em] text-xs text-[#E6C87E]">Community & Culture</p>
+           <h1 className="font-display uppercase text-6xl md:text-8xl lg:text-[10rem] font-bold leading-[0.9] mt-4 text-[#E6C87E]">
              <TitleReveal>
                EVENTS<span className="text-white">.</span>
              </TitleReveal>
            </h1>
-            <p className="font-serif-italic text-xl md:text-2xl mt-6 max-w-2xl text-white/80">
+            <p className="font-serif-italic text-xl md:text-2xl mt-6 max-w-2xl text-neutral-400">
               Bringing the Gujarati diaspora together — across cities, generations, and causes.
             </p>
           </ScrollReveal>
@@ -112,28 +112,28 @@ const Events = () => {
                 direction={idx % 2 === 1 ? 'right' : 'left'}
                 delay={0.2}
               >
-                <p className="font-display uppercase tracking-[0.3em] text-xs text-[#C8102E]">{e.role}</p>
+                <p className="font-display uppercase tracking-[0.3em] text-xs text-[#E6C87E]">{e.role}</p>
                 <h2
-                  className="font-display uppercase text-4xl md:text-5xl font-bold leading-[0.95] mt-3 text-black"
+                  className="font-display uppercase text-4xl md:text-5xl font-bold leading-[0.95] mt-3 text-white"
                   style={{ letterSpacing: '-0.01em' }}
                 >
                   <TitleReveal>{e.title}</TitleReveal>
                 </h2>
-                <div className="divider-red mt-6" />
-                <p className="mt-6 text-lg text-neutral-700 leading-relaxed">{e.text}</p>
-                <div className="mt-6 flex flex-wrap gap-6 text-sm text-neutral-600">
+                <div className="divider-gold mt-6" />
+                <p className="mt-6 text-lg text-neutral-400 leading-relaxed">{e.text}</p>
+                <div className="mt-6 flex flex-wrap gap-6 text-sm text-neutral-400">
                   <span className="flex items-center gap-2">
-                    <Calendar size={16} className="text-[#C8102E]" />
+                    <Calendar size={16} className="text-[#E6C87E]" />
                     Year-round
                   </span>
                   <span className="flex items-center gap-2">
-                    <MapPin size={16} className="text-[#C8102E]" />
+                    <MapPin size={16} className="text-[#E6C87E]" />
                     USA & Canada
                   </span>
                 </div>
                 <Link
                   to="/contact"
-                  className="mt-8 inline-flex items-center gap-2 font-display uppercase tracking-widest text-sm border-b-2 border-black pb-1 hover:border-[#C8102E] hover:text-[#C8102E] transition-colors w-fit"
+                  className="mt-8 inline-flex items-center gap-2 font-display uppercase tracking-widest text-sm border-b-2 border-white pb-1 hover:border-[#E6C87E] hover:text-[#E6C87E] transition-colors w-fit"
                 >
                   Get Involved <ArrowUpRight size={14} />
                 </Link>
@@ -144,14 +144,14 @@ const Events = () => {
       </section>
 
       {/* Banner CTA */}
-      <section className="bg-[#C8102E] text-white py-20">
+      <section className="bg-[#E6C87E] text-black py-20">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <h3 className="font-display uppercase text-3xl md:text-5xl font-bold leading-tight max-w-2xl">
+          <h3 className="font-display text-black uppercase text-3xl md:text-5xl font-bold leading-tight max-w-2xl">
             Host an event with the community.
           </h3>
           <Link
             to="/contact"
-            className="px-7 py-4 bg-black hover:bg-white hover:text-black text-white font-display uppercase tracking-widest text-sm transition-colors"
+            className="px-7 py-4 bg-black hover:bg-neutral-900 text-white font-display uppercase tracking-widest text-sm transition-colors"
           >
             Reach Out
           </Link>

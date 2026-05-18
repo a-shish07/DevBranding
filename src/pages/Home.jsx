@@ -46,14 +46,14 @@ const HCarousel = ({ children, ariaLabel = 'carousel' }) => {
         <button
           aria-label="Previous"
           onClick={() => scroll(-1)}
-          className="w-11 h-11 border border-neutral-300 hover:border-[#C8102E] hover:text-[#C8102E] flex items-center justify-center transition-colors"
+          className="w-11 h-11 border border-neutral-300 hover:border-[#E6C87E] hover:text-[#E6C87E] flex items-center justify-center transition-colors"
         >
           <ChevronLeft size={20} />
         </button>
         <button
           aria-label="Next"
           onClick={() => scroll(1)}
-          className="w-11 h-11 border border-neutral-300 hover:border-[#C8102E] hover:text-[#C8102E] flex items-center justify-center transition-colors"
+          className="w-11 h-11 border border-neutral-300 hover:border-[#E6C87E] hover:text-[#E6C87E] flex items-center justify-center transition-colors"
         >
           <ChevronRight size={20} />
         </button>
@@ -82,14 +82,14 @@ const HCarouselDark = ({ children, ariaLabel = 'carousel' }) => {
         <button
           aria-label="Previous"
           onClick={() => scroll(-1)}
-          className="w-11 h-11 border border-white/30 hover:border-[#C8102E] hover:text-[#C8102E] text-white flex items-center justify-center transition-colors"
+          className="w-11 h-11 border border-white/30 hover:border-[#E6C87E] hover:text-[#E6C87E] text-white flex items-center justify-center transition-colors"
         >
           <ChevronLeft size={20} />
         </button>
         <button
           aria-label="Next"
           onClick={() => scroll(1)}
-          className="w-11 h-11 border border-white/30 hover:border-[#C8102E] hover:text-[#C8102E] text-white flex items-center justify-center transition-colors"
+          className="w-11 h-11 border border-white/30 hover:border-[#E6C87E] hover:text-[#E6C87E] text-white flex items-center justify-center transition-colors"
         >
           <ChevronRight size={20} />
         </button>
@@ -128,7 +128,7 @@ const PillarsSection = () => {
       </div>
       <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         <ScrollReveal className="lg:col-span-5" direction="right">
-          <p className="font-condensed uppercase tracking-[0.3em] text-xs text-[#ff8194] mb-4">
+          <p className="font-condensed uppercase tracking-[0.3em] text-xs text-[#E6C87E] mb-4">
             The Pillars
           </p>
           <h2
@@ -141,7 +141,7 @@ const PillarsSection = () => {
               extraordinary life.
             </TitleReveal>
           </h2>
-          <p className="mt-6 text-white/70 max-w-md">
+          <p className="mt-6 text-neutral-400 max-w-md">
             The values that shape every decision, every relationship, and every business Dev builds.
           </p>
         </ScrollReveal>
@@ -166,7 +166,7 @@ const PillarsSection = () => {
                     {p.name}
                   </span>
                   <span className={`flex items-center gap-2 text-xs uppercase tracking-widest transition-colors ${
-                    i === active ? 'text-[#ff8194]' : 'text-white/60 group-hover:text-[#ff8194]'
+                    i === active ? 'text-[#E6C87E]' : 'text-white/60 group-hover:text-[#E6C87E]'
                   }`}>
                     {i === active ? 'Active' : 'Explore'}
                     <ArrowUpRight size={16} className={`transition-transform duration-300 ${i === active ? 'rotate-45' : ''}`} />
@@ -181,7 +181,7 @@ const PillarsSection = () => {
                       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="text-white/70 text-lg leading-relaxed max-w-xl">
+                      <p className="text-neutral-400 text-lg leading-relaxed max-w-xl">
                         {p.desc}
                       </p>
                     </motion.div>
@@ -245,7 +245,7 @@ const TestimonialsSection = () => {
 
           {/* Quote and controls */}
           <div className="lg:col-span-7 lg:pl-8">
-            <p className="font-condensed uppercase tracking-[0.3em] text-xs text-[#ff8194]">
+            <p className="font-condensed uppercase tracking-[0.3em] text-xs text-[#E6C87E]">
               What Leaders Say
             </p>
             <blockquote
@@ -274,7 +274,7 @@ const TestimonialsSection = () => {
                     onClick={() => setI(idx)}
                     aria-label={`Show testimonial ${idx + 1}`}
                     className={`h-1.5 rounded-full transition-all ${
-                      idx === i ? 'bg-[#C8102E] w-12' : 'bg-white/30 w-6 hover:bg-white/60'
+                      idx === i ? 'bg-[#E6C87E] w-12' : 'bg-black/30 w-6 hover:bg-black/60'
                     }`}
                   />
                 ))}
@@ -283,14 +283,14 @@ const TestimonialsSection = () => {
                 <button
                   onClick={prev}
                   aria-label="Previous testimonial"
-                  className="w-11 h-11 rounded-full border border-white/30 hover:border-[#C8102E] hover:text-[#C8102E] flex items-center justify-center transition-colors"
+                  className="w-11 h-11 rounded-full border border-white/30 hover:border-[#E6C87E] hover:text-[#E6C87E] flex items-center justify-center transition-colors"
                 >
                   <ChevronLeft size={18} />
                 </button>
                 <button
                   onClick={next}
                   aria-label="Next testimonial"
-                  className="w-11 h-11 rounded-full border border-white/30 hover:border-[#C8102E] hover:text-[#C8102E] flex items-center justify-center transition-colors"
+                  className="w-11 h-11 rounded-full border border-white/30 hover:border-[#E6C87E] hover:text-[#E6C87E] flex items-center justify-center transition-colors"
                 >
                   <ChevronRight size={18} />
                 </button>
@@ -311,7 +311,7 @@ const TestimonialsSection = () => {
                     src={tt.avatar}
                     alt={tt.name}
                     className={`w-14 h-14 rounded-full object-cover ${
-                      idx === i ? 'ring-2 ring-[#C8102E]' : 'ring-1 ring-white/20'
+                      idx === i ? 'ring-2 ring-[#E6C87E]' : 'ring-1 ring-white/20'
                     }`}
                   />
                   <span className="text-[10px] font-condensed uppercase tracking-widest text-white/60 whitespace-nowrap">
@@ -342,7 +342,7 @@ const AboutSection = () => {
   }, [images.length]);
 
   return (
-    <section className=" pt-10 bg-white overflow-hidden">
+    <section className=" pt-10 bg-black overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: Auto-playing Carousel */}
@@ -370,13 +370,13 @@ const AboutSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <p className="font-condensed uppercase tracking-[0.3em] text-sm font-bold text-[#C8102E] mb-3">
+              <p className="font-condensed uppercase tracking-[0.3em] text-sm font-bold text-[#E6C87E] mb-3">
                 ABOUT US
               </p>
-              <h2 className="font-display text-5xl md:text-6xl font-extrabold leading-[1.05] text-black mb-8" style={{ letterSpacing: '-0.02em' }}>
+              <h2 className="font-display text-5xl md:text-6xl font-extrabold leading-[1.05] text-white mb-8" style={{ letterSpacing: '-0.02em' }}>
                 <TitleReveal>
                   Building communities.<br />
-                  <span className="text-[#C8102E]">Leading with vision.</span>
+                  <span className="text-[#E6C87E]">Leading with vision.</span>
                 </TitleReveal>
               </h2>
             </motion.div>
@@ -389,7 +389,7 @@ const AboutSection = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="overflow-y-auto pr-4 custom-scrollbar mb-10 max-h-[300px] md:max-h-[350px] overscroll-contain"
             >
-              <div className="space-y-6 text-neutral-600 text-base leading-relaxed">
+              <div className="space-y-6 text-neutral-400 text-base leading-relaxed">
                 <p>
                   Dev Bharwad is a respected entrepreneur and an influential leader within the global Gujarati community. 
                   Born and brought up in Ahmedabad, India, he completed his Bachelor of Commerce (B.Com) and began his professional 
@@ -422,13 +422,13 @@ const AboutSection = () => {
             >
               <Link
                 to="/story"
-                className="px-10 py-4 bg-[#C8102E] hover:bg-[#a50d24] text-white font-display font-bold uppercase tracking-widest text-sm rounded-full transition-all hover:shadow-lg hover:shadow-red-900/20"
+                className="px-10 py-4 bg-[#E6C87E] hover:bg-[#C5A059] text-white font-display font-bold uppercase tracking-widest text-sm rounded-full transition-all hover:shadow-lg hover:shadow-red-900/20"
               >
                 EXPLORE JOURNEY
               </Link>
               <Link
                 to="/contact"
-                className="px-10 py-4 bg-white border-2 border-black hover:bg-black hover:text-white text-black font-display font-bold uppercase tracking-widest text-sm rounded-full transition-all"
+                className="px-10 py-4 bg-black border-2 border-black hover:bg-black hover:text-white text-white font-display font-bold uppercase tracking-widest text-sm rounded-full transition-all"
               >
                 CONTACT
               </Link>
@@ -460,7 +460,7 @@ const Home = () => {
 
   if (loading) {
     return (
-      <div className="bg-white">
+      <div className="bg-black">
         {/* Hero Skeleton */}
         <section className="relative min-h-screen flex items-center overflow-hidden bg-neutral-100">
           <div className="relative max-w-[1400px] mx-auto px-6 lg:px-10 w-full pt-32 pb-24">
@@ -497,10 +497,10 @@ const Home = () => {
         {/* Video Skeleton */}
         <section className="py-32 md:py-40 bg-neutral-900">
           <div className="max-w-3xl mx-auto px-6 text-center space-y-6 flex flex-col items-center">
-            <Skeleton className="h-4 w-24 bg-white/10" />
-            <Skeleton className="h-20 w-full bg-white/10" />
-            <Skeleton className="h-6 w-2/3 bg-white/10" />
-            <Skeleton className="h-12 w-40 rounded-full bg-white/10 mt-4" />
+            <Skeleton className="h-4 w-24 bg-black/10" />
+            <Skeleton className="h-20 w-full bg-black/10" />
+            <Skeleton className="h-6 w-2/3 bg-black/10" />
+            <Skeleton className="h-12 w-40 rounded-full bg-black/10 mt-4" />
           </div>
         </section>
       </div>
@@ -508,7 +508,7 @@ const Home = () => {
   }
 
   return (
-    <div className="bg-white">
+    <div className="bg-black">
       {/* ===== HERO ===== */}
      <section className="relative text-white min-h-screen flex items-center overflow-hidden bg-blue-950 grain">
         <div className="absolute inset-0 flex justify-end">
@@ -550,11 +550,11 @@ const Home = () => {
                 <br />
                 extraordinary.
                 <br />
-                <span style={{ color: '#C8102E' }}>Unleash yours.</span>
+                <span style={{ color: '#E6C87E' }}>Unleash yours.</span>
               </TitleReveal>
             </h1>
             <motion.p 
-              className="mt-8 text-lg md:text-xl text-white/80 max-w-xl"
+              className="mt-8 text-lg md:text-xl text-neutral-400 max-w-xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -570,7 +570,7 @@ const Home = () => {
             >
               <Link
                 to="/story"
-                className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#C8102E] hover:bg-[#a50d24] font-display font-semibold text-sm uppercase tracking-widest transition-colors"
+                className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#E6C87E] hover:bg-[#C5A059] font-display font-semibold text-sm uppercase tracking-widest transition-colors"
               >
                 Start Now <ArrowRight size={16} className="cta-arrow" />
               </Link>
@@ -587,7 +587,7 @@ const Home = () => {
         {/* Floating event card (bottom-right) */}
         <Link
           to="/events"
-          className="hidden lg:flex absolute bottom-10 right-1 w-[300px] bg-white text-black overflow-hidden group hover:shadow-2xl transition-shadow rounded-2xl"
+          className="hidden lg:flex absolute bottom-10 right-1 w-[300px] bg-black text-white overflow-hidden group hover:shadow-2xl transition-shadow rounded-2xl"
         >
           <img
             src="/third.jpeg"
@@ -595,13 +595,13 @@ const Home = () => {
             className="w-32 h-28 object-cover"
           />
           <div className="flex-1 p-2">
-            <p className="text-[10px] font-condensed uppercase tracking-widest text-[#C8102E]">
+            <p className="text-[10px] font-condensed uppercase tracking-widest text-[#E6C87E]">
               Next Event
             </p>
             <p className="font-display font-bold text-sm leading-tight mt-1 line-clamp-2">
               {EVENTS[0].title}
             </p>
-            <span className="mt-3 inline-flex items-center gap-1 text-xs font-display uppercase tracking-widest text-black group-hover:text-[#C8102E] transition-colors">
+            <span className="mt-3 inline-flex items-center gap-1 text-xs font-display uppercase tracking-widest text-white group-hover:text-[#E6C87E] transition-colors">
               View details <ArrowUpRight size={12} className="cta-arrow" />
             </span>
           </div>
@@ -626,12 +626,12 @@ const Home = () => {
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <ScrollReveal direction="up">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-              <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.95] text-black" style={{ letterSpacing: '-0.03em' }}>
+              <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.95] text-white" style={{ letterSpacing: '-0.03em' }}>
                 <TitleReveal>Events that liberate</TitleReveal>
               </h2>
               <Link
                 to="/events"
-                className="group inline-flex items-center gap-2 font-display uppercase tracking-widest text-sm text-[#C8102E] hover:text-black transition-colors w-fit"
+                className="group inline-flex items-center gap-2 font-display uppercase tracking-widest text-sm text-[#E6C87E] hover:text-white transition-colors w-fit"
               >
                 Discover events <ArrowRight size={14} className="cta-arrow" />
               </Link>
@@ -653,11 +653,11 @@ const Home = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
                   <div className="relative h-full flex flex-col justify-end p-6">
-                    <p className="font-condensed uppercase tracking-[0.25em] text-[10px] text-[#ff8194]">{e.role}</p>
+                    <p className="font-condensed uppercase tracking-[0.25em] text-[10px] text-[#E6C87E]">{e.role}</p>
                     <h3 className="font-display text-2xl font-bold mt-2 leading-tight" style={{ letterSpacing: '-0.01em' }}>
                       {e.short}
                     </h3>
-                    <p className="mt-2 text-sm text-white/80 line-clamp-2">{e.title}</p>
+                    <p className="mt-2 text-sm text-neutral-400 line-clamp-2">{e.title}</p>
                   </div>
                 </Link>
               ))}
@@ -693,7 +693,7 @@ const Home = () => {
 
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <ScrollReveal direction="up">
-            <p className="font-condensed uppercase tracking-[0.3em] text-xs text-[#ff8194] mb-6">
+            <p className="font-condensed uppercase tracking-[0.3em] text-xs text-[#E6C87E] mb-6">
               The Promise
             </p>
             <h2
@@ -703,16 +703,16 @@ const Home = () => {
               <TitleReveal>
                 Master every area
                 <br />
-                of your <span style={{ color: '#C8102E' }}>life</span>.
+                of your <span style={{ color: '#E6C87E' }}>life</span>.
               </TitleReveal>
             </h2>
-            <p className="mt-8 text-lg text-white/85 max-w-xl mx-auto">
+            <p className="mt-8 text-lg text-neutral-400 max-w-xl mx-auto">
               Close the gap between where you are and where you want to be — with the principles
               of leadership, heritage, and service that have guided Dev for over two decades.
             </p>
             <Link
               to="/story"
-              className="group mt-10 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#C8102E] hover:bg-[#a50d24] text-white font-display uppercase tracking-widest text-sm transition-colors"
+              className="group mt-10 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#E6C87E] hover:bg-[#C5A059] text-white font-display uppercase tracking-widest text-sm transition-colors"
             >
               Start now <ArrowRight size={14} className="cta-arrow" />
             </Link>
@@ -727,20 +727,20 @@ const Home = () => {
       <TestimonialsSection />
 
       {/* ===== HUNGER / MEET DEV ===== */}
-      {/* <section className="py-24 md:py-32 bg-white">
+      {/* <section className="py-24 md:py-32 bg-black">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 order-2 lg:order-1">
             <h2
-              className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.02] text-black"
+              className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.02] text-white"
               style={{ letterSpacing: '-0.03em' }}
             >
               Do you have a hunger to
               <br />
               increase the quality
               <br />
-              of your <span style={{ color: '#C8102E' }}>life?</span>
+              of your <span style={{ color: '#E6C87E' }}>life?</span>
             </h2>
-            <p className="mt-8 text-lg text-neutral-700 max-w-xl">
+            <p className="mt-8 text-lg text-neutral-400 max-w-xl">
               We believe progress equals happiness. And no matter where you are looking to excel,
               Dev’s journey is here to help you forge your pathway. Meet the man who has spent over
               two decades creating breakthroughs and uniting communities.
@@ -748,15 +748,15 @@ const Home = () => {
             <div className="mt-10 flex flex-wrap items-center gap-6">
               <Link
                 to="/story"
-                className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-black hover:bg-[#C8102E] text-white font-display uppercase tracking-widest text-sm transition-colors"
+                className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-black hover:bg-[#E6C87E] text-white font-display uppercase tracking-widest text-sm transition-colors"
               >
                 Meet Dev Bharwad <ArrowRight size={14} className="cta-arrow" />
               </Link>
               <button
                 onClick={() => alert('Video player coming soon')}
-                className="group inline-flex items-center gap-3 text-black hover:text-[#C8102E] transition-colors"
+                className="group inline-flex items-center gap-3 text-white hover:text-[#E6C87E] transition-colors"
               >
-                <span className="w-12 h-12 rounded-full bg-[#C8102E] text-white flex items-center justify-center play-pulse">
+                <span className="w-12 h-12 rounded-full bg-[#E6C87E] text-white flex items-center justify-center play-pulse">
                   <Play size={16} className="ml-0.5" />
                 </span>
                 <span className="font-display uppercase tracking-widest text-sm">Watch video</span>
@@ -782,7 +782,7 @@ const Home = () => {
             {PRESS_LOGOS.map((p) => (
               <span
                 key={p}
-                className="font-serif text-2xl md:text-3xl text-neutral-400 hover:text-neutral-700 tracking-wide transition-colors"
+                className="font-serif text-2xl md:text-3xl text-neutral-400 hover:text-neutral-400 tracking-wide transition-colors"
               >
                 {p}
               </span>
@@ -811,12 +811,12 @@ const Home = () => {
                 <TitleReveal>
                   Bharwad equals
                   <br />
-                  <span style={{ color: '#C8102E' }}>impact.</span>
+                  <span style={{ color: '#E6C87E' }}>impact.</span>
                 </TitleReveal>
               </h2>
             </ScrollReveal>
             <ScrollReveal className="lg:col-span-7" direction="left" delay={0.2}>
-              <p className="text-lg text-white/80 max-w-xl">
+              <p className="text-lg text-neutral-400 max-w-xl">
                 Join over a million members of the diaspora who are building, celebrating and
                 thriving alongside Dev. Their stories paint the picture of what is possible.
               </p>
@@ -835,7 +835,7 @@ const Home = () => {
               </div>
               <Link
                 to="/achievements"
-                className="group mt-10 inline-flex items-center gap-2 font-display uppercase tracking-widest text-sm border-b border-white pb-1 hover:text-[#C8102E] hover:border-[#C8102E] transition-colors"
+                className="group mt-10 inline-flex items-center gap-2 font-display uppercase tracking-widest text-sm border-b border-white pb-1 hover:text-[#E6C87E] hover:border-[#E6C87E] transition-colors"
               >
                 Learn more <ArrowRight size={14} className="cta-arrow" />
               </Link>
@@ -857,7 +857,7 @@ const Home = () => {
                   />
                   <div className="absolute inset-0 bg-black/30" />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="w-16 h-16 rounded-full bg-[#C8102E] flex items-center justify-center play-pulse">
+                    <span className="w-16 h-16 rounded-full bg-[#E6C87E] flex items-center justify-center play-pulse">
                       <Play size={22} className="text-white ml-1" />
                     </span>
                   </div>
@@ -874,17 +874,17 @@ const Home = () => {
       </section>
 
       {/* ===== BECOME UNSHAKEABLE (intro to events) ===== */}
-      <section className="py-20 md:py-28 bg-white">
+      <section className="py-20 md:py-28 bg-black">
         <ScrollReveal direction="up" className="max-w-3xl mx-auto px-6 text-center">
           <h2
-            className="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.95] text-black"
+            className="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[0.95] text-white"
             style={{ letterSpacing: '-0.03em' }}
           >
             <TitleReveal>
-              Become <span style={{ color: '#C8102E' }}>unshakeable</span>.
+              Become <span style={{ color: '#E6C87E' }}>unshakeable</span>.
             </TitleReveal>
           </h2>
-          <p className="mt-8 text-lg text-neutral-700">
+          <p className="mt-8 text-lg text-neutral-400">
             With community programs, mentorship, and businesses designed to power your growth, Dev’s
             foundational principles are informed by over two decades of disciplined leadership.
           </p>
@@ -895,12 +895,12 @@ const Home = () => {
       {/* <section className="py-20 md:py-28 bg-neutral-100">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-            <h2 className="font-display text-5xl md:text-6xl font-extrabold leading-[0.95] text-black" style={{ letterSpacing: '-0.03em' }}>
+            <h2 className="font-display text-5xl md:text-6xl font-extrabold leading-[0.95] text-white" style={{ letterSpacing: '-0.03em' }}>
               Upcoming events
             </h2>
             <Link
               to="/events"
-              className="group inline-flex items-center gap-2 font-display uppercase tracking-widest text-sm text-[#C8102E] hover:text-black transition-colors w-fit"
+              className="group inline-flex items-center gap-2 font-display uppercase tracking-widest text-sm text-[#E6C87E] hover:text-white transition-colors w-fit"
             >
               Explore all events <ArrowRight size={14} className="cta-arrow" />
             </Link>
@@ -920,7 +920,7 @@ const Home = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent" />
                 <div className="relative h-full flex flex-col justify-end p-8 md:p-10 max-w-2xl">
-                  <span className="inline-flex w-fit items-center px-3 py-1 bg-white/15 backdrop-blur-sm border border-white/20 text-[11px] font-condensed uppercase tracking-widest">
+                  <span className="inline-flex w-fit items-center px-3 py-1 bg-black/15 backdrop-blur-sm border border-white/20 text-[11px] font-condensed uppercase tracking-widest">
                     {e.badge}
                   </span>
                   <h3
@@ -929,19 +929,19 @@ const Home = () => {
                   >
                     {e.short}
                   </h3>
-                  <p className="mt-3 text-white/80 max-w-md">{e.text}</p>
-                  <div className="mt-5 flex flex-wrap gap-5 text-xs text-white/70 font-condensed uppercase tracking-widest">
+                  <p className="mt-3 text-neutral-400 max-w-md">{e.text}</p>
+                  <div className="mt-5 flex flex-wrap gap-5 text-xs text-neutral-400 font-condensed uppercase tracking-widest">
                     <span className="flex items-center gap-2">
-                      <Calendar size={14} className="text-[#ff8194]" /> {e.date}
+                      <Calendar size={14} className="text-[#E6C87E]" /> {e.date}
                     </span>
                     <span className="flex items-center gap-2">
-                      <MapPin size={14} className="text-[#ff8194]" /> {e.place}
+                      <MapPin size={14} className="text-[#E6C87E]" /> {e.place}
                     </span>
                     <span className="flex items-center gap-2">
-                      <Clock size={14} className="text-[#ff8194]" /> Eastern
+                      <Clock size={14} className="text-[#E6C87E]" /> Eastern
                     </span>
                   </div>
-                  <span className="mt-6 inline-flex w-fit items-center gap-2 px-6 py-3 bg-[#C8102E] group-hover:bg-[#a50d24] font-display uppercase tracking-widest text-xs transition-colors">
+                  <span className="mt-6 inline-flex w-fit items-center gap-2 px-6 py-3 bg-[#E6C87E] group-hover:bg-[#C5A059] font-display uppercase tracking-widest text-xs transition-colors">
                     Learn more <ArrowRight size={12} className="cta-arrow" />
                   </span>
                 </div>
@@ -952,25 +952,25 @@ const Home = () => {
       </section> */}
 
       {/* ===== EXPERT GUIDANCE (mentorship/coaching style) ===== */}
-      <section className="py-24 md:py-28 bg-white">
+      <section className="py-24 md:py-28 bg-black">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <ScrollReveal className="lg:col-span-7" direction="right">
-            <p className="font-condensed uppercase tracking-[0.3em] text-xs text-[#C8102E]">
+            <p className="font-condensed uppercase tracking-[0.3em] text-xs text-[#E6C87E]">
               Mentorship
             </p>
             <h2
-              className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.02] text-black mt-3"
+              className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.02] text-white mt-3"
               style={{ letterSpacing: '-0.03em' }}
             >
               <TitleReveal>
                 Expert guidance for
                 <br />
-                your <span style={{ color: '#C8102E' }}>path</span>.
+                your <span style={{ color: '#E6C87E' }}>path</span>.
               </TitleReveal>
             </h2>
           
 
-            <p className="mt-8 text-lg text-neutral-700 max-w-xl leading-relaxed">
+            <p className="mt-8 text-lg text-neutral-400 max-w-xl leading-relaxed">
               Achieve lasting transformation across business, community, and culture.
               Discover how Dev’s ecosystem of ventures and community bodies creates
               lasting change.
@@ -985,7 +985,7 @@ const Home = () => {
                   transition={{ duration: 0.4, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <p className="mt-4 text-lg text-neutral-600 max-w-xl leading-relaxed">
+                  <p className="mt-4 text-lg text-neutral-400 max-w-xl leading-relaxed">
                     Through innovation, collaboration, and sustainable initiatives,
                     Dev’s ecosystem empowers individuals, strengthens communities, and
                     drives meaningful progress. From impactful ventures to social
@@ -998,7 +998,7 @@ const Home = () => {
 
             <button
               onClick={() => setExpanded(!expanded)}
-              className="group mt-4 inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-neutral-600 transition-all duration-300"
+              className="group mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-neutral-400 transition-all duration-300"
             >
               {expanded ? "Read Less" : "Read More"}
 
@@ -1011,13 +1011,13 @@ const Home = () => {
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 to="/businesses"
-                className="group inline-flex items-center gap-2 px-7 py-3.5 bg-[#C8102E] hover:bg-[#a50d24] text-white font-display uppercase tracking-widest text-xs transition-colors"
+                className="group inline-flex items-center gap-2 px-7 py-3.5 bg-[#E6C87E] hover:bg-[#C5A059] text-white font-display uppercase tracking-widest text-xs transition-colors"
               >
                 Businesses <ArrowRight size={12} className="cta-arrow" />
               </Link>
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-2 px-7 py-3.5 border border-black hover:bg-black hover:text-white text-black font-display uppercase tracking-widest text-xs transition-colors"
+                className="group inline-flex items-center gap-2 px-7 py-3.5 border border-black hover:bg-black hover:text-white text-white font-display uppercase tracking-widest text-xs transition-colors"
               >
                 Get in touch <ArrowRight size={12} className="cta-arrow" />
               </Link>
@@ -1044,7 +1044,7 @@ const Home = () => {
 
   {/* Play Button */}
   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-    <div className="w-20 h-20 rounded-full bg-[#C8102E] flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500">
+    <div className="w-20 h-20 rounded-full bg-[#E6C87E] flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-500">
       <Play size={28} className="text-white fill-white ml-1" />
     </div>
   </div>
@@ -1071,15 +1071,15 @@ const Home = () => {
               <TitleReveal>
                 Ready to live an
                 <br />
-                <span style={{ color: '#C8102E' }}>extraordinary life?</span>
+                <span style={{ color: '#E6C87E' }}>extraordinary life?</span>
               </TitleReveal>
             </h2>
-            <p className="mt-6 text-xl text-white/85">
+            <p className="mt-6 text-xl text-neutral-400">
               Now is your time. Connect with us to learn more.
             </p>
               <Link
                 to="/contact"
-                className="group mt-10 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#C8102E] hover:bg-[#a50d24] font-display uppercase tracking-widest text-sm transition-colors"
+                className="group mt-10 inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#E6C87E] hover:bg-[#C5A059] font-display uppercase tracking-widest text-sm transition-colors"
               >
                 Learn more <ArrowRight size={14} className="cta-arrow" />
               </Link>

@@ -41,7 +41,7 @@ const Navbar = () => {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="bg-[#C8102E] text-white overflow-hidden"
+            className="bg-[#E6C87E] text-black overflow-hidden"
           >
             <div className="max-w-[1400px] mx-auto px-6 lg:px-10 h-9 flex items-center justify-between text-xs">
               <p className="truncate font-condensed uppercase tracking-widest">
@@ -76,7 +76,7 @@ const Navbar = () => {
               className="font-display text-white text-xl md:text-2xl font-extrabold tracking-tight"
               style={{ letterSpacing: '-0.02em' }}
             >
-              DEV <span style={{ color: '#C8102E' }}>BHARWAD</span>
+              DEV <span style={{ color: '#E6C87E' }}>BHARWAD</span>
             </span>
           </Link>
 
@@ -100,7 +100,7 @@ const Navbar = () => {
           <div className="hidden lg:block">
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center px-5 py-2.5 bg-[#C8102E] hover:bg-[#a50d24] text-white font-condensed uppercase text-sm tracking-widest transition-colors"
+              className="inline-flex items-center justify-center px-5 py-2.5 bg-[#E6C87E] hover:bg-[#C5A059] text-white font-condensed uppercase text-sm tracking-widest transition-colors"
             >
               Get In Touch
             </Link>
@@ -149,7 +149,7 @@ const Navbar = () => {
               >
                 <Link
                   to="/contact"
-                  className="mt-4 inline-flex items-center justify-center px-5 py-3 bg-[#C8102E] text-white font-condensed uppercase text-sm tracking-widest w-full"
+                  className="mt-4 inline-flex items-center justify-center px-5 py-3 bg-[#E6C87E] text-white font-condensed uppercase text-sm tracking-widest w-full"
                 >
                   Get In Touch
                 </Link>

@@ -15,20 +15,29 @@ const Media = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const current = tabs.find((t) => t.id === active);
 
+  React.useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedImage]);
+
   return (
-    <div className="bg-white">
+    <div className="bg-black">
       {/* Hero */}
       <section className="relative bg-black text-white pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0  " />
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 relative">
           <ScrollReveal direction="up">
-            <p className="font-display uppercase tracking-[0.3em] text-xs text-[#C8102E]">Press • Stories • Voice</p>
-            <h1 className="font-display uppercase text-6xl md:text-8xl lg:text-[10rem] font-bold leading-[0.9] mt-4">
-              <TitleReveal>
-                MEDIA & <span style={{ color: '#C8102E' }}>GALLERY</span>
-              </TitleReveal>
+            <p className="font-display uppercase tracking-[0.3em] text-xs text-[#E6C87E]">Press • Stories • Voice</p>
+            <h1 className="font-display uppercase text-6xl md:text-8xl lg:text-[10rem] font-bold leading-[0.9] mt-4 text-[#E6C87E]">
+               MEDIA & <span className="text-white">GALLERY</span>
             </h1>
-            <p className="font-serif-italic text-xl md:text-2xl mt-6 max-w-2xl text-white/80">
+            <p className="font-serif-italic text-xl md:text-2xl mt-6 max-w-2xl text-neutral-400">
               Conversations, coverage, and reflections from a life of leadership.
             </p>
           </ScrollReveal>
@@ -36,7 +45,7 @@ const Media = () => {
       </section>
 
       {/* Tabs */}
-      <section className="border-b border-neutral-200 sticky top-20 bg-white z-30">
+      <section className="border-b border-neutral-200 sticky top-20 bg-black z-30">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-10 flex flex-wrap gap-2">
           {tabs.map((t) => {
             const Icon = t.icon;
@@ -47,8 +56,8 @@ const Media = () => {
                 onClick={() => setActive(t.id)}
                 className={`flex items-center gap-2 px-5 py-4 font-display uppercase tracking-widest text-sm border-b-2 transition-colors ${
                   isActive
-                    ? 'border-[#C8102E] text-black'
-                    : 'border-transparent text-neutral-500 hover:text-black'
+                    ? 'border-[#E6C87E] text-white'
+                    : 'border-transparent text-neutral-500 hover:text-white'
                 }`}
               >
                 <Icon size={16} /> {t.label}
@@ -77,7 +86,7 @@ const Media = () => {
                       <img src={v.image} alt={v.title} className="w-full h-full object-cover opacity-90" />
                       <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="w-20 h-20 rounded-full bg-[#C8102E] flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <span className="w-20 h-20 rounded-full bg-[#E6C87E] flex items-center justify-center group-hover:scale-110 transition-transform">
                           <Play size={28} className="text-white ml-1" />
                         </span>
                       </div>
@@ -85,7 +94,7 @@ const Media = () => {
                         {v.duration}
                       </span>
                     </div>
-                    <h3 className="mt-5 font-display uppercase text-xl md:text-2xl font-bold leading-tight text-black group-hover:text-[#C8102E] transition-colors">
+                    <h3 className="mt-5 font-display uppercase text-xl md:text-2xl font-bold leading-tight text-white group-hover:text-[#E6C87E] transition-colors">
                       {v.title}
                     </h3>
                   </button>
@@ -113,7 +122,7 @@ const Media = () => {
                       <h3 className="text-white font-display uppercase text-xl font-bold translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                         {item.title}
                       </h3>
-                      <p className="text-white/80 text-sm mt-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
+                      <p className="text-neutral-400 text-sm mt-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">
                         {item.description}
                       </p>
                     </div>
@@ -129,18 +138,21 @@ const Media = () => {
                   direction="up"
                   delay={(i % 3) * 0.1}
                 >
-                  <article className="group cursor-pointer">
+                  <article 
+                    className="group cursor-pointer"
+                    onClick={() => setSelectedImage({ ...n, description: n.excerpt })}
+                  >
                     <div className="img-zoom aspect-[4/3] overflow-hidden">
                       <img src={n.image} alt={n.title} className="w-full h-full object-cover" />
                     </div>
-                    <p className="mt-5 font-display uppercase tracking-widest text-xs text-[#C8102E]">
+                    <p className="mt-5 font-display uppercase tracking-widest text-xs text-[#E6C87E]">
                       {n.type} • {n.date}
                     </p>
-                    <h3 className="mt-2 font-display uppercase text-xl md:text-2xl font-bold leading-tight text-black group-hover:text-[#C8102E] transition-colors">
+                    <h3 className="mt-2 font-display uppercase text-xl md:text-2xl font-bold leading-tight text-white group-hover:text-[#E6C87E] transition-colors">
                       {n.title}
                     </h3>
-                    <p className="mt-3 text-neutral-700 leading-relaxed">{n.excerpt}</p>
-                    <span className="mt-4 inline-flex items-center gap-2 font-display uppercase tracking-widest text-xs border-b border-black pb-1 group-hover:text-[#C8102E] group-hover:border-[#C8102E] transition-colors">
+                    <p className="mt-3 text-neutral-400 leading-relaxed">{n.excerpt}</p>
+                    <span className="mt-4 inline-flex items-center gap-2 font-display uppercase tracking-widest text-xs border-b border-white pb-1 group-hover:text-[#E6C87E] group-hover:border-[#E6C87E] transition-colors">
                       Read More <ArrowUpRight size={12} />
                     </span>
                   </article>
@@ -154,27 +166,31 @@ const Media = () => {
       {/* Fullscreen Image Overlay */}
       {selectedImage && (
         <div 
-          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-10 fade-in"
+          className="fixed inset-0 z-[100] bg-black flex items-center justify-center p-4 md:p-10 fade-in"
           onClick={() => setSelectedImage(null)}
         >
           <button 
-            className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors"
+            className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors z-[110]"
             onClick={() => setSelectedImage(null)}
           >
             <X size={40} />
           </button>
           
-          <div className="max-w-5xl w-full max-h-full flex flex-col items-center justify-center p-4">
-            <img 
-              src={selectedImage.image} 
-              alt={selectedImage.title} 
-              className="max-w-full max-h-[60vh] md:max-h-[65vh] object-contain shadow-2xl"
-            />
-            <div className="mt-6 text-center max-w-2xl px-4">
-              <h2 className="text-white font-display uppercase text-2xl md:text-3xl font-bold leading-tight">
+          <div className="w-full h-full flex flex-col items-center justify-center">
+            <div className="relative w-full h-full flex items-center justify-center p-4 md:p-12">
+              <img 
+                src={selectedImage.image} 
+                alt={selectedImage.title} 
+                className="max-w-full max-h-full object-contain shadow-2xl"
+              />
+            </div>
+            
+            {/* Overlay text at bottom */}
+            <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black via-black/80 to-transparent text-center">
+              <h2 className="text-[#E6C87E] font-display uppercase text-2xl md:text-3xl font-bold leading-tight">
                 {selectedImage.title}
               </h2>
-              <p className="text-white/60 text-sm md:text-base mt-3 font-serif-italic leading-relaxed">
+              <p className="text-white/60 text-sm md:text-base mt-2 font-serif-italic leading-relaxed max-w-2xl mx-auto">
                 {selectedImage.description}
               </p>
             </div>

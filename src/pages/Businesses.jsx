@@ -26,7 +26,7 @@ const BusinessModal = ({ business, onClose }) => {
       />
 
       {/* Modal */}
-      <div className="relative w-full max-w-xl bg-white rounded-[2rem] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300">
+      <div className="relative w-full max-w-xl bg-black rounded-[2rem] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-300">
 
         {/* Top Section */}
         <div className="relative bg-black px-8 py-8 md:px-10 md:py-10 text-white">
@@ -34,7 +34,7 @@ const BusinessModal = ({ business, onClose }) => {
           {/* Close */}
           <button
             onClick={onClose}
-            className="absolute top-5 right-5 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all"
+            className="absolute top-5 right-5 w-10 h-10 rounded-full bg-black/10 hover:bg-black/20 flex items-center justify-center transition-all"
           >
             <X size={18} />
           </button>
@@ -43,7 +43,7 @@ const BusinessModal = ({ business, onClose }) => {
           <div className="flex items-center gap-5 pr-10">
 
             {/* Logo */}
-            <div className="w-20 h-20 rounded-3xl overflow-hidden bg-white/10 shrink-0 border border-white/10">
+            <div className="w-20 h-20 rounded-3xl overflow-hidden bg-black/10 shrink-0 border border-white/10">
               <img
                 src={BUSINESS_IMAGES[imageIndex % BUSINESS_IMAGES.length]}
                 alt={business.name}
@@ -67,7 +67,7 @@ const BusinessModal = ({ business, onClose }) => {
         {/* Content */}
         <div className="px-8 py-8 md:px-10 md:py-10">
 
-          <p className="text-neutral-600 leading-relaxed text-[15px] md:text-base">
+          <p className="text-neutral-400 leading-relaxed text-[15px] md:text-base">
             {business.desc}
           </p>
 
@@ -79,12 +79,12 @@ const BusinessModal = ({ business, onClose }) => {
                 Status
               </p>
 
-              <p className="font-semibold text-sm text-black">
+              <p className="font-semibold text-sm text-white">
                 Active Venture
               </p>
             </div>
 
-            <div className="w-12 h-12 rounded-xl bg-neutral-100 flex items-center justify-center text-[#C8102E]">
+            <div className="w-12 h-12 rounded-xl bg-neutral-100 flex items-center justify-center text-[#E6C87E]">
               <ArrowUpRight size={20} />
             </div>
           </div>
@@ -97,6 +97,7 @@ const BusinessModal = ({ business, onClose }) => {
 const Businesses = () => {
   const [q, setQ] = useState('');
   const [selectedBusiness, setSelectedBusiness] = useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const filtered = useMemo(
     () =>
@@ -109,20 +110,54 @@ const Businesses = () => {
   // ESC close
   useEffect(() => {
     const handleEsc = (e) => {
-      if (e.key === 'Escape') setSelectedBusiness(null);
+      if (e.key === 'Escape') {
+        setSelectedBusiness(null);
+        setSelectedImage(null);
+      }
     };
 
     window.addEventListener('keydown', handleEsc);
 
-    return () => window.removeEventListener('keydown', handleEsc);
-  }, []);
+    if (selectedBusiness || selectedImage) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedBusiness, selectedImage]);
 
   return (
-    <div className="bg-white">
+    <div className="bg-black">
       <BusinessModal
         business={selectedBusiness}
         onClose={() => setSelectedBusiness(null)}
       />
+
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-10 animate-in fade-in duration-300"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button 
+            className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors"
+            onClick={() => setSelectedImage(null)}
+          >
+            <X size={40} />
+          </button>
+          
+          <div className="max-w-5xl w-full max-h-full flex flex-col items-center justify-center p-4">
+            <img 
+              src={selectedImage} 
+              alt="Business detail" 
+              className="max-w-full max-h-[70vh] md:max-h-[80vh] object-contain shadow-2xl"
+            />
+          </div>
+        </div>
+      )}
 
       {/* HERO */}
       <section className="relative bg-black text-white pt-28 pb-20 overflow-hidden">
@@ -137,17 +172,15 @@ const Businesses = () => {
 
         <div className="max-w-7xl mx-auto px-6 lg:px-10 relative">
           <ScrollReveal direction="up">
-            <p className="font-display uppercase tracking-[0.3em] text-xs text-[#C8102E]">
+            <p className="font-display uppercase tracking-[0.3em] text-xs text-[#E6C87E]">
               AOD Group of Companies
             </p>
 
-            <h1 className="font-display uppercase text-5xl md:text-7xl lg:text-[8rem] font-black leading-[0.9] mt-4 tracking-tight">
-              <TitleReveal>
-                <span className="text-[#C8102E]">Businesses</span>
-              </TitleReveal>
+            <h1 className="font-display uppercase text-5xl md:text-7xl lg:text-[8rem] font-black leading-[0.9] mt-4 tracking-tight text-[#E6C87E]">
+              BUSINESSES
             </h1>
 
-            <p className="font-serif-italic text-lg md:text-2xl mt-6 max-w-2xl text-white/75">
+            <p className="font-serif-italic text-lg md:text-2xl mt-6 max-w-2xl text-neutral-400">
               One ecosystem. {BUSINESSES.length} verticals.
               Built for long-term impact and innovation.
             </p>
@@ -161,25 +194,25 @@ const Businesses = () => {
           
           {/* Left */}
           <ScrollReveal className="lg:col-span-5" direction="right">
-            <p className="font-display uppercase tracking-[0.3em] text-xs text-[#C8102E] mb-4">
+            <p className="font-display uppercase tracking-[0.3em] text-xs text-[#E6C87E] mb-4">
               Vision & Strategy
             </p>
 
-            <h2 className="font-display uppercase text-4xl md:text-6xl font-black leading-[0.92] text-black tracking-tight">
+            <h2 className="font-display uppercase text-4xl md:text-6xl font-black leading-[0.92] text-white tracking-tight">
               <TitleReveal>
                 A diversified
                 <br />
                 ecosystem under
                 <br />
-                <span className="text-[#C8102E]">
+                <span className="text-[#E6C87E]">
                   one vision.
                 </span>
               </TitleReveal>
             </h2>
 
-            <div className="h-px w-20 bg-[#C8102E] mt-8 mb-6" />
+            <div className="h-px w-20 bg-[#E6C87E] mt-8 mb-6" />
 
-            <p className="text-base md:text-lg text-neutral-600 leading-relaxed max-w-lg">
+            <p className="text-base md:text-lg text-neutral-400 leading-relaxed max-w-lg">
               From premium real estate and luxury hospitality to food,
               technology, and global investments — AOD Group operates
               across carefully crafted verticals.
@@ -193,9 +226,10 @@ const Businesses = () => {
                 key={i}
                 direction="up"
                 delay={i * 0.05}
-                className={`group overflow-hidden rounded-2xl relative ${
+                className={`group overflow-hidden rounded-2xl relative cursor-pointer ${
                   i === 0 ? 'col-span-2 row-span-2' : 'aspect-square'
                 }`}
+                onClick={() => setSelectedImage(src)}
               >
                 <img
                   src={src}
@@ -203,7 +237,7 @@ const Businesses = () => {
                   className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                 />
 
-                <div className="absolute inset-0 bg-[#C8102E]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-[#E6C87E]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
               </ScrollReveal>
             ))}
           </div>
@@ -211,20 +245,20 @@ const Businesses = () => {
       </section>
 
       {/* BUSINESS CARDS */}
-      <section className="bg-neutral-50 py-16 md:py-20">
+      <section className="bg-neutral-900 py-16 md:py-20">
         <div className="max-w-6xl mx-auto px-6 lg:px-10">
 
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
-              <p className="font-display uppercase tracking-[0.3em] text-[10px] font-bold text-[#C8102E] mb-3">
+              <p className="font-display uppercase tracking-[0.3em] text-[10px] font-bold text-[#E6C87E] mb-3">
                 Portfolio Explorer
               </p>
 
-              <h2 className="font-display uppercase text-3xl md:text-5xl font-black leading-[0.95] text-black tracking-tight">
+              <h2 className="font-display uppercase text-3xl md:text-5xl font-black leading-[0.95] text-white tracking-tight">
                 <TitleReveal>
                   Explore the
-                  <span className="block text-[#C8102E]">
+                  <span className="block text-[#E6C87E]">
                     Businesses
                   </span>
                 </TitleReveal>
@@ -243,7 +277,7 @@ const Businesses = () => {
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 placeholder="Search business..."
-                className="w-full pl-12 pr-4 h-12 bg-white border border-neutral-200 rounded-full focus:ring-2 focus:ring-[#C8102E]/10 focus:outline-none transition-all text-sm"
+                className="w-full pl-12 pr-4 h-12 bg-black border border-neutral-200 rounded-full focus:ring-2 focus:ring-[#E6C87E]/10 focus:outline-none transition-all text-sm"
               />
             </div>
           </div>
@@ -258,7 +292,7 @@ const Businesses = () => {
               >
                 <div
                   onClick={() => setSelectedBusiness(b)}
-                  className="group h-full min-h-[240px] bg-white rounded-[26px] border border-neutral-200 p-6 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 cursor-pointer flex flex-col"
+                  className="group h-full min-h-[240px] bg-black rounded-[26px] border border-neutral-200 p-6 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 cursor-pointer flex flex-col"
                 >
                   
                   {/* Top */}
@@ -274,13 +308,13 @@ const Businesses = () => {
                     </div>
 
                     {/* Title */}
-                    <h3 className="font-display text-xl font-black tracking-tight text-black leading-tight group-hover:text-[#C8102E] transition-colors">
+                    <h3 className="font-display text-xl font-black tracking-tight text-white leading-tight group-hover:text-[#E6C87E] transition-colors">
                       {b.name}
                     </h3>
                   </div>
 
                   {/* Description */}
-                  <p className="text-sm text-neutral-500 leading-relaxed line-clamp-4 flex-grow">
+                  <p className="text-sm text-neutral-400 leading-relaxed line-clamp-4 flex-grow">
                     {b.desc}
                   </p>
 
@@ -288,7 +322,7 @@ const Businesses = () => {
                   <div className="mt-6 pt-4 border-t border-neutral-100 flex items-center justify-end">
                     <ArrowUpRight
                       size={18}
-                      className="text-neutral-300 group-hover:text-[#C8102E] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"
+                      className="text-neutral-300 group-hover:text-[#E6C87E] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"
                     />
                   </div>
                 </div>
